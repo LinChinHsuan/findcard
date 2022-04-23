@@ -1,0 +1,35 @@
+<template>
+  <div class="toast-container position-fixed">
+    <Toast v-for="(msg, key) in messages" :key="key"
+      :msg="msg"
+    />
+  </div>
+</template>
+
+<style lang="scss" scoped>
+.toast-container{
+  z-index: 3;
+  top: 10px;
+  right: 10px;
+}
+</style>
+
+<script>
+import Toast from '@/components/Toast.vue';
+
+export default {
+  components: { Toast },
+  data() {
+    return {
+      messages: [],
+    };
+  },
+  inject: ['emitter'],
+  mounted() {
+    this.emitter.on("push-message", (message) => {
+        const { style = "success", title, content} = message;
+        this.messages.push({ style, title, content });
+    })
+  },
+};
+</script>
