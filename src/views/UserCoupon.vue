@@ -22,7 +22,8 @@
             </div>
             <div class="d-flex">
               <div class="couponCard d-md-block mx-2" v-for="(item,index) in coupons" :key="index" @click="chooseCard(item)" :class="{'choose': choose.code === item.code, 'd-none':  choose.code !== item.code}">
-                <img src="images/card.png" alt="抽獎卡" :class="{'cursorPointer': choose === ''}">
+                <img src="https://storage.googleapis.com/vue-course-api.appspot.com/vuefindcard/1650868538931.png?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=HLx2GWEMEirAm0qbQ5wJXH9RJvMHKNEdKXiisfw3jqR1tlHlOiC%2FiomXTEfYJjJ2Q0zp3ItCFCd%2B9YN6RhngDn5aKNrcTh55LDZT4hv%2B%2BrAj8kWJuvjB3eNeNpZav3Wisb2E3fZKU4GVZNSHQ9Q5eZmreYu9TMZpK1ms7tf3kA2JA1Z%2ByG6XVZ7%2FckG3KQnRoY8iORN2FMhGUGKciCWUK8qZIBu3PRmE14LtG9o%2FzieXleAI3qehW2AURVsW8IAlkLEk%2FYxT4m7oSY3tMDa6nspK58ZfV14NKQH3hxNHQXAScrLLddgtn6RgmVH7vK2frFORKhGH9QVfBK4uP%2BTrxw%3D%3D"
+                alt="抽獎卡" :class="{'cursorPointer': choose === ''}">
                 <div class="text h-100 w-100 d-flex flex-column justify-content-center text-center text-white border border-4 border-white">
                   <p class="fs-4 mb-4">{{ item.title }}</p>
                   <p class="fs-5 mb-0">折扣碼</p>
@@ -31,7 +32,8 @@
                 </div>
               </div>
               <div class="couponCard d-md-none mx-2" @click="chooseCard(coupons[1])" :class="{'d-none': choose !== ''}">
-                <img src="images/card.png" alt="抽獎卡">
+                <img src="https://storage.googleapis.com/vue-course-api.appspot.com/vuefindcard/1650868538931.png?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=HLx2GWEMEirAm0qbQ5wJXH9RJvMHKNEdKXiisfw3jqR1tlHlOiC%2FiomXTEfYJjJ2Q0zp3ItCFCd%2B9YN6RhngDn5aKNrcTh55LDZT4hv%2B%2BrAj8kWJuvjB3eNeNpZav3Wisb2E3fZKU4GVZNSHQ9Q5eZmreYu9TMZpK1ms7tf3kA2JA1Z%2ByG6XVZ7%2FckG3KQnRoY8iORN2FMhGUGKciCWUK8qZIBu3PRmE14LtG9o%2FzieXleAI3qehW2AURVsW8IAlkLEk%2FYxT4m7oSY3tMDa6nspK58ZfV14NKQH3hxNHQXAScrLLddgtn6RgmVH7vK2frFORKhGH9QVfBK4uP%2BTrxw%3D%3D"
+                alt="抽獎卡">
               </div>
             </div>
             <div class="text-center mt-4">
