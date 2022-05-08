@@ -354,6 +354,9 @@
             white-space: nowrap;
             overflow: hidden;
             animation: typing 2s steps(18),Wcaret 2s steps(1);
+            @media (max-width: 424px) {
+                font-size: 16px !important;
+            }
         }
     }
     .btn{
@@ -593,7 +596,9 @@ export default {
             if(this.height >= 200){
                 this.$refs.about.classList.add("animation");
             }
-            if(this.height >= 1900){
+            if(this.height >= 1900 && document.body.clientWidth >= 768){
+                this.$refs.news.classList.add("animation");
+            }else if(this.height >= 1500 && document.body.clientWidth < 768){
                 this.$refs.news.classList.add("animation");
             }
             if(this.height >= 3150){
