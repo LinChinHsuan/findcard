@@ -34,29 +34,6 @@
   </nav>
 </template>
 
-<style lang="scss" scoped>
-.navbar-light .navbar-nav .nav-link {
-  &.active,&:hover {
-    color: #80D1D6;
-    @media(max-width:992px) {
-      background-color: #80D1D6;
-      color: #ffffff;
-    }
-  }
-}
-.navbar-toggler{
-  &:focus{
-    box-shadow: none;
-  }
-}
-.material-icons{
-  line-height: 40px;
-  &.active{
-    color: #80D1D6;
-  }
-}
-</style>
-
 <script>
 import "bootstrap/js/dist/collapse";
 export default {
@@ -89,3 +66,26 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.navbar-light .navbar-nav .nav-link {
+  &.active,&:hover {
+    color: #80D1D6;
+    @media(max-width:992px) {
+      background-color: #80D1D6;
+      color: #ffffff;
+    }
+  }
+}
+.navbar-toggler{
+  &:focus{
+    box-shadow: none;
+  }
+}
+.material-icons{
+  line-height: 40px;
+  &.active{
+    color: #80D1D6;
+  }
+}
+</style>

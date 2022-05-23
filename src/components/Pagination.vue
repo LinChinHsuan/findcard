@@ -20,12 +20,6 @@
   </nav>
 </template>
 
-<style lang="scss" scoped>
-.page-link{
-  line-height: 25px;
-}
-</style>
-
 <script>
 export default {
   props: ['pages'],
@@ -36,3 +30,9 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.page-link{
+  line-height: 25px;
+}
+</style>

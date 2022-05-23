@@ -109,12 +109,6 @@
     </div>
 </template>
 
-<style lang="scss" scoped>
-.btn:hover,.btn:active{
-    color: #FFFFFF;
-}
-</style>
-
 <script>
 import modalMixin from "@/mixins/modalMixin";
 export default {
@@ -159,3 +153,9 @@ export default {
     mixins: [modalMixin]
 }
 </script>
+
+<style lang="scss" scoped>
+.btn:hover,.btn:active{
+    color: #FFFFFF;
+}
+</style>

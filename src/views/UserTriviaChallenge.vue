@@ -78,28 +78,6 @@
     <SectionBanner :info="SectionCouponBanner"></SectionBanner>
 </template>
 
-<style lang="scss" scoped>
-.text-indent{
-    text-indent: 2em;
-}
-.bg-cover{
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-img{
-    object-fit: cover;
-}
-
-.btn-outline-primary:hover,.choose{
-    background-color: #80D1D6;
-    color: #ffffff;
-}
-.checkCircle{
-    font-size: 80px;
-}
-</style>
-
 <script>
 import SectionBanner from '@/components/SectionBanner';
 export default {
@@ -197,3 +175,25 @@ export default {
     }
 }
 </script>
+
+<style lang="scss" scoped>
+.text-indent{
+    text-indent: 2em;
+}
+.bg-cover{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+img{
+    object-fit: cover;
+}
+
+.btn-outline-primary:hover,.choose{
+    background-color: #80D1D6;
+    color: #ffffff;
+}
+.checkCircle{
+    font-size: 80px;
+}
+</style>

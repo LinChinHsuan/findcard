@@ -76,72 +76,6 @@
   <Footer></Footer>
 </template>
 
-<style lang="scss" scoped>
-sup{
-  top: -.65rem;
-  left: .1rem;
-}
-.productBanner {
-  height: 300px;
-  background-image: url(https://storage.googleapis.com/vue-course-api.appspot.com/vuefindcard/1650381522049.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=D32yCABvgJflufQeWm08X4iYr7HyUnA10nJAT1gJ7w7kVmPMFsizdyloy3RZQezUSXikrngiIIeGfalSz01f1bDyYH8GwhrVuLE%2Ba8E4xtZmfJ9MZUuVs9nujeeRqHn0FNBjU6WErkbIF52MW6Z3YcjyXG2wz0TEC7SH%2FssRuxi%2FAspMfVI%2BB2lPhhxdlrZ0HlDztO1X3Q78iAbKmW5%2FV68hzUSucyQuiJVtBoZpoBwsXxirTp0oYBzRuY3A40dg9ixO%2B4zJJd3A2%2FMjoz7L2nQiWH9MjEMoWWJ2rEWe%2BYySWTN6m2udHqMPMx91X%2BNN8wO9wTC%2Bhg8VeDTWn0ifQQ%3D%3D);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  @media (max-width:768px) {
-    height: 250px;
-  }
-  @media (max-width:576px) {
-    height: 200px;
-  }
-}
-.list-group-flush > .list-group-item {
-  white-space: nowrap;
-  width: auto;
-  transition: .7s;
-  background-color: transparent;
-  color: #80D1D6;
-  &:hover,&:focus,&.active {
-    color: #ffffff;
-    box-shadow: inset 0 0 0 3em #80D1D6;
-  }
-  @media(max-width: 768px){
-    flex-grow: 1;
-  }
-  @media(max-width: 576px){
-    flex-grow: 0;
-    width: 50%;
-  }
-}
-.list-group-item + .list-group-item.active{
-  margin-top: 0;
-}
-.img-fit{
-    height: 250px;
-    width: 100%;
-    object-fit: cover;
-    transition: .5s;
-}
-.cursorPointer{
-    cursor: pointer;
-    &:hover{
-      img{
-        transform: scale(1.15);
-      }
-      box-shadow:0 0 8px rgb(128, 209, 214, .2);
-    }
-    .material-icons {
-      transition: .3s;
-      top: 8px;
-      right: 8px;
-      background-color: rgb(255, 255, 255, .3);
-      color: #dee2e6;
-      &:hover,&.favorite {
-          color: #FF5959;
-      }
-    }
-}
-</style>
-
 <script>
 import emitter from '@/methods/emitter';
 import SectionBanner from '@/components/SectionBanner';
@@ -272,3 +206,69 @@ export default {
     }
 }
 </script>
+
+<style lang="scss" scoped>
+sup{
+  top: -.65rem;
+  left: .1rem;
+}
+.productBanner {
+  height: 300px;
+  background-image: url(https://storage.googleapis.com/vue-course-api.appspot.com/vuefindcard/1650381522049.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=D32yCABvgJflufQeWm08X4iYr7HyUnA10nJAT1gJ7w7kVmPMFsizdyloy3RZQezUSXikrngiIIeGfalSz01f1bDyYH8GwhrVuLE%2Ba8E4xtZmfJ9MZUuVs9nujeeRqHn0FNBjU6WErkbIF52MW6Z3YcjyXG2wz0TEC7SH%2FssRuxi%2FAspMfVI%2BB2lPhhxdlrZ0HlDztO1X3Q78iAbKmW5%2FV68hzUSucyQuiJVtBoZpoBwsXxirTp0oYBzRuY3A40dg9ixO%2B4zJJd3A2%2FMjoz7L2nQiWH9MjEMoWWJ2rEWe%2BYySWTN6m2udHqMPMx91X%2BNN8wO9wTC%2Bhg8VeDTWn0ifQQ%3D%3D);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  @media (max-width:768px) {
+    height: 250px;
+  }
+  @media (max-width:576px) {
+    height: 200px;
+  }
+}
+.list-group-flush > .list-group-item {
+  white-space: nowrap;
+  width: auto;
+  transition: .7s;
+  background-color: transparent;
+  color: #80D1D6;
+  &:hover,&:focus,&.active {
+    color: #ffffff;
+    box-shadow: inset 0 0 0 3em #80D1D6;
+  }
+  @media(max-width: 768px){
+    flex-grow: 1;
+  }
+  @media(max-width: 576px){
+    flex-grow: 0;
+    width: 50%;
+  }
+}
+.list-group-item + .list-group-item.active{
+  margin-top: 0;
+}
+.img-fit{
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+.cursorPointer{
+    cursor: pointer;
+    &:hover{
+      img{
+        transform: scale(1.15);
+      }
+      box-shadow:0 0 8px rgb(128, 209, 214, .2);
+    }
+    .material-icons {
+      transition: .3s;
+      top: 8px;
+      right: 8px;
+      background-color: rgb(255, 255, 255, .3);
+      color: #dee2e6;
+      &:hover,&.favorite {
+          color: #FF5959;
+      }
+    }
+}
+</style>

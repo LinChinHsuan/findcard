@@ -11,6 +11,15 @@
     <Footer></Footer>
 </template>
 
+<script>
+import Footer from '@/components/Footer';
+export default {
+    components: {
+        Footer
+    }
+}
+</script>
+
 <style lang="scss" scoped>
 .banner{
     height: 300px;
@@ -26,12 +35,3 @@
     }
 }
 </style>
-
-<script>
-import Footer from '@/components/Footer';
-export default {
-    components: {
-        Footer
-    }
-}
-</script>

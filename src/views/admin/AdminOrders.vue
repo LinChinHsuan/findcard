@@ -51,15 +51,6 @@
   <Pagination :pages="pagination" @emit-pages="getOrders"></Pagination>
 </template>
 
-<style lang="scss" scoped>
-th,td{
-    white-space: nowrap;
-}
-.btn:hover,.btn:active{
-    color: #FFFFFF;
-}
-</style>
-
 <script>
 import OrderModal from "@/components/OrderModal.vue";
 import DelModal from "@/components/DelModal.vue";
@@ -122,3 +113,12 @@ export default {
     }
 }
 </script>
+
+<style lang="scss" scoped>
+th,td{
+    white-space: nowrap;
+}
+.btn:hover,.btn:active{
+    color: #FFFFFF;
+}
+</style>

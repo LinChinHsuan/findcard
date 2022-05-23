@@ -386,78 +386,6 @@
   <Footer></Footer>
 </template>
 
-<style lang="scss" scoped>
-.banner {
-  height: 300px;
-  background-image: url("https://storage.googleapis.com/vue-course-api.appspot.com/vuefindcard/1650378700094.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=J9WF4rrceCjVUNak75ujxbEQH%2BQgwluULU502qTrRstd8XzaPSV%2FIdwthrgibdWJdD8wQAzw%2FiBHOzSv2aKjl0OfkPD6EzatbnX8%2F%2FCd0%2F%2FsB0QwA1r1zrkI5wnnXBdwDktwryuqDh0My33Kh29%2F%2BfH0Dju2KV2JdSGklmxqQsA6lX939BcSsB49t5JwHSTq9FbB3path0RdbjaT9Dtf81gYrh8wMj%2B5P4dN%2F3nIudm%2B0Nhi6rQxKB7DpcYFrb5krEJ9ESIDgMu0vbOGmabL%2BmCL85rhFOyzt1hb75%2B4wTNVF3Kf1gI8LExZVsz1D6zmypY9xgxW5INt%2F6xYgWpGGA%3D%3D");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  @media (max-width: 768px) {
-    height: 250px;
-  }
-  @media (max-width: 576px) {
-    height: 200px;
-  }
-}
-.vh-remain{
-    min-height: calc(100vh - 300px);
-}
-.material-icons.cart{
-    font-size: 64px;
-}
-th,td,.btn{
-    white-space: nowrap;
-}
-.productImg {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  @media(max-width: 425px){
-      display: none;
-  }
-}
-.qtyCounter{
-  cursor: pointer;
-  &:hover{
-    background-color: #e9ecef;
-  }
-}
-.btn:hover,.btn:active{
-    color: #FFFFFF;
-}
-.accordion-button{
-  background-color: #ffffff;
-  color: #212529;
-}
-.accordion-item .table > :not(:first-child) {
-    border-top: 1px solid currentColor;
-}
-.active{
-  :first-child{
-    font-size: 2.5rem;
-  }
-  :last-child{
-    font-size: 1.75rem;
-    color: #80D1D6;
-  }
-}
-.inactive{
-  span{
-    color: #6c757d;
-  }
-  :first-child{
-    font-size: 1rem;
-  }
-  :last-child{
-    font-size: 0.75rem;
-  }
-}
-.material-icons.checkCircle {
-  font-size: 80px;
-}
-</style>
-
 <script>
 import emitter from '@/methods/emitter';
 import Footer from "@/components/Footer";
@@ -578,3 +506,75 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.banner {
+  height: 300px;
+  background-image: url("https://storage.googleapis.com/vue-course-api.appspot.com/vuefindcard/1650378700094.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=J9WF4rrceCjVUNak75ujxbEQH%2BQgwluULU502qTrRstd8XzaPSV%2FIdwthrgibdWJdD8wQAzw%2FiBHOzSv2aKjl0OfkPD6EzatbnX8%2F%2FCd0%2F%2FsB0QwA1r1zrkI5wnnXBdwDktwryuqDh0My33Kh29%2F%2BfH0Dju2KV2JdSGklmxqQsA6lX939BcSsB49t5JwHSTq9FbB3path0RdbjaT9Dtf81gYrh8wMj%2B5P4dN%2F3nIudm%2B0Nhi6rQxKB7DpcYFrb5krEJ9ESIDgMu0vbOGmabL%2BmCL85rhFOyzt1hb75%2B4wTNVF3Kf1gI8LExZVsz1D6zmypY9xgxW5INt%2F6xYgWpGGA%3D%3D");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  @media (max-width: 768px) {
+    height: 250px;
+  }
+  @media (max-width: 576px) {
+    height: 200px;
+  }
+}
+.vh-remain{
+    min-height: calc(100vh - 300px);
+}
+.material-icons.cart{
+    font-size: 64px;
+}
+th,td,.btn{
+    white-space: nowrap;
+}
+.productImg {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  @media(max-width: 425px){
+      display: none;
+  }
+}
+.qtyCounter{
+  cursor: pointer;
+  &:hover{
+    background-color: #e9ecef;
+  }
+}
+.btn:hover,.btn:active{
+    color: #FFFFFF;
+}
+.accordion-button{
+  background-color: #ffffff;
+  color: #212529;
+}
+.accordion-item .table > :not(:first-child) {
+    border-top: 1px solid currentColor;
+}
+.active{
+  :first-child{
+    font-size: 2.5rem;
+  }
+  :last-child{
+    font-size: 1.75rem;
+    color: #80D1D6;
+  }
+}
+.inactive{
+  span{
+    color: #6c757d;
+  }
+  :first-child{
+    font-size: 1rem;
+  }
+  :last-child{
+    font-size: 0.75rem;
+  }
+}
+.material-icons.checkCircle {
+  font-size: 80px;
+}
+</style>

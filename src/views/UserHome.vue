@@ -332,6 +332,91 @@
     <Footer></Footer>
 </template>
 
+<script>
+import emitter from '@/methods/emitter';
+import Carousel from "bootstrap/js/dist/carousel";
+import SectionOnSale from '@/components/SectionOnSale';
+import SectionBanner from '@/components/SectionBanner';
+import Footer from '@/components/Footer';
+export default {
+    data() {
+        return {
+            carousel: {},
+            isloading: false,
+            buyNowLoading: false,
+            SectionCouponBanner: {
+                bgImg: "url(https://storage.googleapis.com/vue-course-api.appspot.com/vuefindcard/1650381522049.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=D32yCABvgJflufQeWm08X4iYr7HyUnA10nJAT1gJ7w7kVmPMFsizdyloy3RZQezUSXikrngiIIeGfalSz01f1bDyYH8GwhrVuLE%2Ba8E4xtZmfJ9MZUuVs9nujeeRqHn0FNBjU6WErkbIF52MW6Z3YcjyXG2wz0TEC7SH%2FssRuxi%2FAspMfVI%2BB2lPhhxdlrZ0HlDztO1X3Q78iAbKmW5%2FV68hzUSucyQuiJVtBoZpoBwsXxirTp0oYBzRuY3A40dg9ixO%2B4zJJd3A2%2FMjoz7L2nQiWH9MjEMoWWJ2rEWe%2BYySWTN6m2udHqMPMx91X%2BNN8wO9wTC%2Bhg8VeDTWn0ifQQ%3D%3D)",
+                attachment: true,
+                title: "周年慶優惠券",
+                titleEn: "Coupon",
+                text: "尚未領取周年慶優惠大獎嗎？快來翻出你的專屬優惠券",
+                btnText: "手刀領取",
+                btnPath: "/coupon"
+            },
+            SectionTriviaBanner: {
+                bgImg: "url(https://storage.googleapis.com/vue-course-api.appspot.com/vuefindcard/1650444820513.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=bH91qiBlELvko2ff5FaMMA4xh%2BjVWxjdyh8UZvb2vDttAzlHj8OatXNicPefiNpwQCEWLuqkICdZRf10taPBCnxGT6J%2F573ntuoxcthyKS9R5tN0c9VJMkJNrDIBKF68ej3nF3hx6y8D92%2FWF9b7I6UyJaw1ZyyfJMKwIPoo7w7exwi5NHS01uw9e0TuALCCV%2B%2BGaUmU84C5t4ejN8xnTQwgj5RMkt7xDVdfySH8ZD8MBOD6HfUAgfijtI9TdDHoVFhCS%2BIM2x5VBvb3%2BJ9Xw%2Bm8kJXuynmTFaP4RzUxl5j%2BugpZGllD%2BLaQVX%2BIHXHU2RLR7S%2BL0YOle%2FFfEmTheg%3D%3D)",
+                title: "撲克冷知識",
+                titleEn: "Trivia",
+                text: "你知道嗎？將撲克牌四種花色重疊在一起的話，就會跑出星星喔",
+                btnText: "了解更多",
+                btnPath: "/trivia"
+            },
+            height: 0
+        }
+    },
+    components: {
+        SectionOnSale,
+        SectionBanner,
+        Footer
+    },
+    watch: {
+        height(){
+            if(this.height >= 200){
+                this.$refs.about.classList.add("animation");
+            }
+            if(this.height >= 1900 && document.body.clientWidth >= 768){
+                this.$refs.news.classList.add("animation");
+            }else if(this.height >= 1500 && document.body.clientWidth < 768){
+                this.$refs.news.classList.add("animation");
+            }
+            if(this.height >= 3150){
+                this.$refs.feedback.classList.add("animation");
+            }
+        }
+    },
+    methods: {
+        scroll(){
+            this.height = document.body.scrollTop || document.documentElement.scrollTop;
+        },
+        addCart(id){
+            this.isloading = true;
+            const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/cart`;
+            this.$http.post(api, { data: { product_id: id, qty: 1 } }).then(() => {
+                this.$swal('商品已加入購物車');
+                emitter.emit('update-cart');
+                this.isloading = false;
+            });
+        },
+        buyNow(id){
+            this.buyNowLoading = true;
+            const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/cart`;
+            this.$http.post(api, { data: { product_id: id, qty: 1 } }).then(() => {
+                this.$swal('商品已加入購物車');
+                this.buyNowLoading = false;
+                this.$router.push("/cart");
+            });
+        }
+    },
+    mounted() {
+        this.carousel = new Carousel(this.$refs.carousel);
+        document.addEventListener("scroll", this.scroll);
+    },
+    unmounted() {
+        document.removeEventListener("scroll", this.scroll);
+    },
+}
+</script>
+
 <style lang="scss" scoped>
 //hero banner開始
 .heroBanner{
@@ -553,88 +638,3 @@
 }
 //常見問題結束
 </style>
-
-<script>
-import emitter from '@/methods/emitter';
-import Carousel from "bootstrap/js/dist/carousel";
-import SectionOnSale from '@/components/SectionOnSale';
-import SectionBanner from '@/components/SectionBanner';
-import Footer from '@/components/Footer';
-export default {
-    data() {
-        return {
-            carousel: {},
-            isloading: false,
-            buyNowLoading: false,
-            SectionCouponBanner: {
-                bgImg: "url(https://storage.googleapis.com/vue-course-api.appspot.com/vuefindcard/1650381522049.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=D32yCABvgJflufQeWm08X4iYr7HyUnA10nJAT1gJ7w7kVmPMFsizdyloy3RZQezUSXikrngiIIeGfalSz01f1bDyYH8GwhrVuLE%2Ba8E4xtZmfJ9MZUuVs9nujeeRqHn0FNBjU6WErkbIF52MW6Z3YcjyXG2wz0TEC7SH%2FssRuxi%2FAspMfVI%2BB2lPhhxdlrZ0HlDztO1X3Q78iAbKmW5%2FV68hzUSucyQuiJVtBoZpoBwsXxirTp0oYBzRuY3A40dg9ixO%2B4zJJd3A2%2FMjoz7L2nQiWH9MjEMoWWJ2rEWe%2BYySWTN6m2udHqMPMx91X%2BNN8wO9wTC%2Bhg8VeDTWn0ifQQ%3D%3D)",
-                attachment: true,
-                title: "周年慶優惠券",
-                titleEn: "Coupon",
-                text: "尚未領取周年慶優惠大獎嗎？快來翻出你的專屬優惠券",
-                btnText: "手刀領取",
-                btnPath: "/coupon"
-            },
-            SectionTriviaBanner: {
-                bgImg: "url(https://storage.googleapis.com/vue-course-api.appspot.com/vuefindcard/1650444820513.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=bH91qiBlELvko2ff5FaMMA4xh%2BjVWxjdyh8UZvb2vDttAzlHj8OatXNicPefiNpwQCEWLuqkICdZRf10taPBCnxGT6J%2F573ntuoxcthyKS9R5tN0c9VJMkJNrDIBKF68ej3nF3hx6y8D92%2FWF9b7I6UyJaw1ZyyfJMKwIPoo7w7exwi5NHS01uw9e0TuALCCV%2B%2BGaUmU84C5t4ejN8xnTQwgj5RMkt7xDVdfySH8ZD8MBOD6HfUAgfijtI9TdDHoVFhCS%2BIM2x5VBvb3%2BJ9Xw%2Bm8kJXuynmTFaP4RzUxl5j%2BugpZGllD%2BLaQVX%2BIHXHU2RLR7S%2BL0YOle%2FFfEmTheg%3D%3D)",
-                title: "撲克冷知識",
-                titleEn: "Trivia",
-                text: "你知道嗎？將撲克牌四種花色重疊在一起的話，就會跑出星星喔",
-                btnText: "了解更多",
-                btnPath: "/trivia"
-            },
-            height: 0
-        }
-    },
-    components: {
-        SectionOnSale,
-        SectionBanner,
-        Footer
-    },
-    watch: {
-        height(){
-            if(this.height >= 200){
-                this.$refs.about.classList.add("animation");
-            }
-            if(this.height >= 1900 && document.body.clientWidth >= 768){
-                this.$refs.news.classList.add("animation");
-            }else if(this.height >= 1500 && document.body.clientWidth < 768){
-                this.$refs.news.classList.add("animation");
-            }
-            if(this.height >= 3150){
-                this.$refs.feedback.classList.add("animation");
-            }
-        }
-    },
-    methods: {
-        scroll(){
-            this.height = document.body.scrollTop || document.documentElement.scrollTop;
-        },
-        addCart(id){
-            this.isloading = true;
-            const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/cart`;
-            this.$http.post(api, { data: { product_id: id, qty: 1 } }).then(() => {
-                this.$swal('商品已加入購物車');
-                emitter.emit('update-cart');
-                this.isloading = false;
-            });
-        },
-        buyNow(id){
-            this.buyNowLoading = true;
-            const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/cart`;
-            this.$http.post(api, { data: { product_id: id, qty: 1 } }).then(() => {
-                this.$swal('商品已加入購物車');
-                this.buyNowLoading = false;
-                this.$router.push("/cart");
-            });
-        }
-    },
-    mounted() {
-        this.carousel = new Carousel(this.$refs.carousel);
-        document.addEventListener("scroll", this.scroll);
-    },
-    unmounted() {
-        document.removeEventListener("scroll", this.scroll);
-    },
-}
-</script>

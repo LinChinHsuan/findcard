@@ -59,58 +59,6 @@
   </nav>
 </template>
 
-<style lang="scss" scoped>
-.navbar{
-    z-index: 3;
-}
-.navbar-light .navbar-nav .nav-link {
-  position: relative;
-  &::after{
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 3px;
-    width: 0%;
-    background-color: #80D1D6;
-    transition: width .3s ease;
-  }
-  &.active,&:hover {
-    color: #80D1D6;
-    &::after{
-      width: 100%;
-    }
-    @media(max-width:992px) {
-      background-color: #80D1D6;
-      color: #ffffff;
-      &::after{
-        width: 0;
-      }
-    }
-  }
-}
-.material-icons{
-  line-height: 40px;
-}
-.navbar-toggler{
-  &:focus{
-    box-shadow: none;
-  }
-  .material-icons{
-    &.active{
-      color: #80D1D6;
-    }
-  }
-}
-.num{
-  width:20px;
-  line-height: 20px;
-  top: 8px;
-  right: 8px;
-  font-size: 12px;
-}
-</style>
-
 <script>
 import emitter from '@/methods/emitter';
 import "bootstrap/js/dist/collapse";
@@ -171,3 +119,55 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.navbar{
+    z-index: 3;
+}
+.navbar-light .navbar-nav .nav-link {
+  position: relative;
+  &::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 0%;
+    background-color: #80D1D6;
+    transition: width .3s ease;
+  }
+  &.active,&:hover {
+    color: #80D1D6;
+    &::after{
+      width: 100%;
+    }
+    @media(max-width:992px) {
+      background-color: #80D1D6;
+      color: #ffffff;
+      &::after{
+        width: 0;
+      }
+    }
+  }
+}
+.material-icons{
+  line-height: 40px;
+}
+.navbar-toggler{
+  &:focus{
+    box-shadow: none;
+  }
+  .material-icons{
+    &.active{
+      color: #80D1D6;
+    }
+  }
+}
+.num{
+  width:20px;
+  line-height: 20px;
+  top: 8px;
+  right: 8px;
+  font-size: 12px;
+}
+</style>

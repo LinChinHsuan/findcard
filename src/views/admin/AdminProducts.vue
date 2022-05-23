@@ -40,15 +40,6 @@
     <DelModal ref="delModal" :item="tempProduct" @del-item="delProduct"></DelModal>
 </template>
 
-<style lang="scss" scoped>
-th,td{
-    white-space: nowrap;
-}
-.btn:hover,.btn:active{
-    color: #FFFFFF;
-}
-</style>
-
 <script>
 import ProductModal from "@/components/ProductModal.vue";
 import DelModal from "@/components/DelModal.vue";
@@ -125,3 +116,12 @@ export default {
     }
 }
 </script>
+
+<style lang="scss" scoped>
+th,td{
+    white-space: nowrap;
+}
+.btn:hover,.btn:active{
+    color: #FFFFFF;
+}
+</style>

@@ -55,60 +55,6 @@
   <Footer></Footer>
 </template>
 
-<style lang="scss" scoped>
-.banner{
-  height: 300px;
-  background-image: url("https://storage.googleapis.com/vue-course-api.appspot.com/vuefindcard/1650444886897.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=AKertjf%2FwFKlifZWfQaubvQuXyW6h0WPSlanbt0WKYDgAEN%2Bemhi8JNkt0k3s3rhVYn29eVKkMfUYWGSZBb%2FLFjSJ8Y4sU3vMJxtfRcP5nHsBp%2FRhxrPsus4Ivx0t9YMQuLSmpwzteuwAMJGpsqDUBXVP9jEcCnEV%2FXibgxOAJxRgK9xYwOcMPujFscM8VLBeSq%2Fxl3vl5eUqZVMER7x577FJzmEMMe%2Bq%2FNMqJgnEEkDRDwkuAL%2B7JIFMmVG%2Bu%2Bsipo6U1X%2F6iBon5trL8HgjcF8MhFMkh%2Bj5rlcBK7SVns76nC8XfbQ6Apu%2FGlM9gSyXuFqgLok%2BqWdRiqf7RW9BA%3D%3D");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  @media (max-width:768px) {
-    height: 250px;
-  }
-  @media (max-width:576px) {
-    height: 200px;
-  }
-}
-.couponCard{
-    height: 282px;
-    width: 200px;
-    position: relative;
-    img,.text{
-        transition: .9s;
-        position: absolute;
-        backface-visibility: hidden;
-        border-radius: 15px;
-    }
-    .text{
-        background-color: rgba(128, 209, 214, .9);
-        height: 282px;
-        transform: rotateY(-180deg);
-    }
-    img{
-        width: 200px;
-    }
-}
-.cursorPointer{
-  cursor: pointer;
-}
-.choose{
-    .text{
-        transform: rotateY(0deg);
-    }
-    img{
-        transform: rotateY(-180deg);
-    }    
-}
-.btn{
-  transition: .8s;
-  &:hover,
-  &:focus {
-    color: #ffffff;
-    box-shadow: inset 0 0 0 2em #80D1D6;
-  }
-}
-</style>
-
 <script>
 import SectionOnSale from '@/components/SectionOnSale';
 import SectionBanner from '@/components/SectionBanner';
@@ -169,3 +115,57 @@ export default {
     }
 }
 </script>
+
+<style lang="scss" scoped>
+.banner{
+  height: 300px;
+  background-image: url("https://storage.googleapis.com/vue-course-api.appspot.com/vuefindcard/1650444886897.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=AKertjf%2FwFKlifZWfQaubvQuXyW6h0WPSlanbt0WKYDgAEN%2Bemhi8JNkt0k3s3rhVYn29eVKkMfUYWGSZBb%2FLFjSJ8Y4sU3vMJxtfRcP5nHsBp%2FRhxrPsus4Ivx0t9YMQuLSmpwzteuwAMJGpsqDUBXVP9jEcCnEV%2FXibgxOAJxRgK9xYwOcMPujFscM8VLBeSq%2Fxl3vl5eUqZVMER7x577FJzmEMMe%2Bq%2FNMqJgnEEkDRDwkuAL%2B7JIFMmVG%2Bu%2Bsipo6U1X%2F6iBon5trL8HgjcF8MhFMkh%2Bj5rlcBK7SVns76nC8XfbQ6Apu%2FGlM9gSyXuFqgLok%2BqWdRiqf7RW9BA%3D%3D");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  @media (max-width:768px) {
+    height: 250px;
+  }
+  @media (max-width:576px) {
+    height: 200px;
+  }
+}
+.couponCard{
+    height: 282px;
+    width: 200px;
+    position: relative;
+    img,.text{
+        transition: .9s;
+        position: absolute;
+        backface-visibility: hidden;
+        border-radius: 15px;
+    }
+    .text{
+        background-color: rgba(128, 209, 214, .9);
+        height: 282px;
+        transform: rotateY(-180deg);
+    }
+    img{
+        width: 200px;
+    }
+}
+.cursorPointer{
+  cursor: pointer;
+}
+.choose{
+    .text{
+        transform: rotateY(0deg);
+    }
+    img{
+        transform: rotateY(-180deg);
+    }    
+}
+.btn{
+  transition: .8s;
+  &:hover,
+  &:focus {
+    color: #ffffff;
+    box-shadow: inset 0 0 0 2em #80D1D6;
+  }
+}
+</style>

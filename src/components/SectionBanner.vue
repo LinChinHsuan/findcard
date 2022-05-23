@@ -15,6 +15,12 @@
     </div>
 </template>
 
+<script>
+export default {
+    props: ["info"]
+}
+</script>
+
 <style lang="scss" scoped>
 .bg-img{
     height: 300px;
@@ -34,9 +40,3 @@
   }
 }
 </style>
-
-<script>
-export default {
-    props: ["info"]
-}
-</script>

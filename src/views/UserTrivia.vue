@@ -31,20 +31,6 @@
     <SectionBanner :info="SectionCouponBanner"></SectionBanner>
 </template>
 
-<style lang="scss" scoped>
-.text-indent{
-    text-indent: 2em;
-}
-.bg-cover{
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-img{
-    object-fit: cover;
-}
-</style>
-
 <script>
 import SectionBanner from '@/components/SectionBanner';
 export default {
@@ -98,3 +84,17 @@ export default {
     }
 }
 </script>
+
+<style lang="scss" scoped>
+.text-indent{
+    text-indent: 2em;
+}
+.bg-cover{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+img{
+    object-fit: cover;
+}
+</style>

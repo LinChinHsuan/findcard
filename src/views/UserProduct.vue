@@ -79,37 +79,6 @@
     <Footer></Footer>
 </template>
 
-<style lang="scss">
-.qtyCounter{
-    cursor: pointer;
-    &:hover{
-      background-color: #e9ecef;
-    }
-}
-img{
-    object-fit: cover;
-}
-.productImage{
-    height: 500px;
-    @media (max-width: 992px) {
-        height: 350px;
-    }
-    @media (max-width: 768px) {
-        height: 250px;
-    }
-}
-.carousel-indicators [data-bs-target]{
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #80D1D6;
-}
-.text-description{
-    text-indent: 2em;
-    text-align: justify;
-}
-</style>
-
 <script>
 import emitter from '@/methods/emitter';
 import Carousel from "bootstrap/js/dist/carousel";
@@ -181,3 +150,33 @@ export default {
 }
 </script>
 
+<style lang="scss">
+.qtyCounter{
+    cursor: pointer;
+    &:hover{
+      background-color: #e9ecef;
+    }
+}
+img{
+    object-fit: cover;
+}
+.productImage{
+    height: 500px;
+    @media (max-width: 992px) {
+        height: 350px;
+    }
+    @media (max-width: 768px) {
+        height: 250px;
+    }
+}
+.carousel-indicators [data-bs-target]{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #80D1D6;
+}
+.text-description{
+    text-indent: 2em;
+    text-align: justify;
+}
+</style>

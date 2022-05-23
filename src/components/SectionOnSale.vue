@@ -28,32 +28,6 @@
       </div>
 </template>
 
-<style lang="scss" scoped>
-.img-fit{
-    height: 250px;
-    width: 100%;
-    object-fit: cover;
-    transition: .5s;
-}
-.cursorPointer{
-    cursor: pointer;
-    &:hover{
-      .btn{
-        opacity: 1;
-      }
-      img{
-        transform: scale(1.15);
-      }
-      box-shadow:0 0 8px rgb(128, 209, 214, .2);
-    }
-}
-.btn.bg-dark{
-    z-index: 1;
-    opacity: 0;
-    transition: .5s;      
-}
-</style>
-
 <script>
 import emitter from '@/methods/emitter';
 export default {
@@ -107,3 +81,29 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.img-fit{
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+.cursorPointer{
+    cursor: pointer;
+    &:hover{
+      .btn{
+        opacity: 1;
+      }
+      img{
+        transform: scale(1.15);
+      }
+      box-shadow:0 0 8px rgb(128, 209, 214, .2);
+    }
+}
+.btn.bg-dark{
+    z-index: 1;
+    opacity: 0;
+    transition: .5s;      
+}
+</style>

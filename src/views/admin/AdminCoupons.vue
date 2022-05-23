@@ -46,15 +46,6 @@
     </div>
 </template>
 
-<style lang="scss" scoped>
-th,td{
-    white-space: nowrap;
-}
-.btn:hover,.btn:active{
-    color: #FFFFFF;
-}
-</style>
-
 <script>
 import CouponModal from "@/components/CouponModal.vue";
 import DelModal from "@/components/DelModal.vue";
@@ -131,3 +122,12 @@ export default {
     }
 }
 </script>
+
+<style lang="scss" scoped>
+th,td{
+    white-space: nowrap;
+}
+.btn:hover,.btn:active{
+    color: #FFFFFF;
+}
+</style>

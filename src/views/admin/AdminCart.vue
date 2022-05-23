@@ -223,18 +223,6 @@
   </div>
 </template>
 
-<style lang="scss" scoped>
-.img-fit{
-  object-fit: cover;
-}
-th,td{
-    white-space: nowrap;
-}
-.btn:hover,.btn:active{
-    color: #FFFFFF;
-}
-</style>
-
 <script>
 export default {
     data() {
@@ -357,3 +345,15 @@ export default {
     }
 }
 </script>
+
+<style lang="scss" scoped>
+.img-fit{
+  object-fit: cover;
+}
+th,td{
+    white-space: nowrap;
+}
+.btn:hover,.btn:active{
+    color: #FFFFFF;
+}
+</style>

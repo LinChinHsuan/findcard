@@ -6,14 +6,6 @@
   </div>
 </template>
 
-<style lang="scss" scoped>
-.toast-container{
-  z-index: 3;
-  top: 10px;
-  right: 10px;
-}
-</style>
-
 <script>
 import Toast from '@/components/Toast.vue';
 
@@ -33,3 +25,11 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.toast-container{
+  z-index: 3;
+  top: 10px;
+  right: 10px;
+}
+</style>

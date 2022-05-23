@@ -40,15 +40,6 @@
     <DelModal ref="delModal" :item="tempTrivia" @del-item="delTrivia"></DelModal>
 </template>
 
-<style lang="scss" scoped>
-th,td{
-    white-space: nowrap;
-}
-.btn:hover,.btn:active{
-    color: #FFFFFF;
-}
-</style>
-
 <script>
 import TriviaModal from "@/components/TriviaModal.vue";
 import DelModal from "@/components/DelModal.vue";
@@ -128,3 +119,12 @@ export default {
     }
 }
 </script>
+
+<style lang="scss" scoped>
+th,td{
+    white-space: nowrap;
+}
+.btn:hover,.btn:active{
+    color: #FFFFFF;
+}
+</style>
