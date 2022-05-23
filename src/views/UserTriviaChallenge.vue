@@ -13,7 +13,7 @@
             <div class="row" v-if="!answered">
                 <div class="col-lg-5 col-xl-6">
                     <div class="w-100 h-100">
-                        <div class="d-none d-lg-block w-100 h-100 bg-cover" :style="{'background-image': 'url(' + nowQuestion.imageUrl + ')'}"></div>
+                        <div class="d-none d-lg-block w-100 h-100 bg-cover" :style="{'background-image': `url(${nowQuestion.imageUrl})`}"></div>
                         <img :src="nowQuestion.imageUrl" :alt="nowQuestion.title" height="300" class="d-block d-lg-none w-100"> 
                     </div>
                 </div>
