@@ -20,7 +20,7 @@
                 <div class="col-md-6 col-lg-4 mb-3" v-for="item in favorite" :key="item.id" @click="viewProduct(item.id)">
                     <div class="bg-white border cursorPointer">
                         <div class="overflow-hidden position-relative">
-                            <button class="btn fs-4 position-absolute text-white w-100 h-100 bg-dark bg-opacity-75">查看更多</button>
+                            <button class="btn fs-4 position-absolute text-white w-100 h-100 bg-dark bg-opacity-75" type="button">查看更多</button>
                             <img class="img-fit" :src="item.imageUrl">
                         </div>
                             <div class="d-flex pt-4 px-4 fw-bold">

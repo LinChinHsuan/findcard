@@ -202,8 +202,8 @@
             </tbody>
           </table>
           <div class="d-flex mt-4">
-            <button class="btn btn-primary btn-lg fw-bold text-white" @click="step = 1">重新購物</button>
-            <button class="btn btn-primary btn-lg fw-bold text-white ms-auto" @click="payOrder">確認付款去</button>
+            <button class="btn btn-primary btn-lg fw-bold text-white" type="button" @click="step = 1">重新購物</button>
+            <button class="btn btn-primary btn-lg fw-bold text-white ms-auto" type="button" @click="payOrder">確認付款去</button>
           </div>
         </form>      
       </template>
@@ -215,7 +215,7 @@
             <p class="mb-0">感謝您的訂購</p>
             <p class="mb-0">商品預計於三個工作天內寄送（不含週休及國定例假日）</p>
             <p class="mb-3">再請留意簡訊通知及配送人員的電話 </p>
-            <button class="btn btn-primary btn-lg align-self-center fw-bold text-white" @click="step = 1">重新購物</button>
+            <button class="btn btn-primary btn-lg align-self-center fw-bold text-white" type="button" @click="step = 1">重新購物</button>
           </div>
         </div>
       </template>

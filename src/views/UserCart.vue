@@ -362,7 +362,7 @@
                 </table>
                 <p class="text-end mt-3">訂單成立時間：{{ $filters.date(order.create_at) }}</p>
                 <div class="text-end">
-                  <button class="btn btn-primary fs-5 text-white fw-bold w-100 py-3" @click="payOrder">確認付款</button>
+                  <button class="btn btn-primary fs-5 text-white fw-bold w-100 py-3" type="button" @click="payOrder">確認付款</button>
                 </div>
               </div>
             </template>

@@ -34,12 +34,12 @@
                                     <img class="img-fluid mt-2" :src="item">
                                 </div>
                                 <div>
-                                <button class="btn btn-outline-primary btn-sm d-block w-100" v-if="tempProduct.imagesUrl.length <= 4 && tempProduct.imagesUrl[tempProduct.imagesUrl.length-1]" @click="tempProduct.imagesUrl.push('')">
+                                <button class="btn btn-outline-primary btn-sm d-block w-100" type="button" v-if="tempProduct.imagesUrl.length <= 4 && tempProduct.imagesUrl[tempProduct.imagesUrl.length-1]" @click="tempProduct.imagesUrl.push('')">
                                     新增圖片
                                 </button>
                                 </div>
                             </div>
-                            <button class="btn btn-outline-primary btn-sm d-block w-100 mt-3" v-else @click="createImages">
+                            <button class="btn btn-outline-primary btn-sm d-block w-100 mt-3" type="button" v-else @click="createImages">
                                 新增多圖
                             </button>
                         </div>

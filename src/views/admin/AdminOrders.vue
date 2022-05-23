@@ -37,8 +37,8 @@
                         </td>
                         <td>
                             <div class="btn-group">
-                                <button class="btn btn-outline-primary fw-bold" @click="openOrderModal(item)">檢視</button>
-                                <button class="btn btn-outline-danger fw-bold" @click="openDelModal(item)">刪除</button>
+                                <button class="btn btn-outline-primary fw-bold" type="button" @click="openOrderModal(item)">檢視</button>
+                                <button class="btn btn-outline-danger fw-bold" type="button" @click="openDelModal(item)">刪除</button>
                             </div>
                         </td>
                     </tr>

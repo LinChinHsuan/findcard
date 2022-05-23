@@ -27,8 +27,8 @@
                     </td>
                     <td>
                         <div class="btn-group">
-                            <button class="btn btn-outline-primary fw-bold" @click="openModal(false,item)">編輯</button>
-                            <button class="btn btn-outline-danger fw-bold" @click="openDelModal(item)">刪除</button>
+                            <button class="btn btn-outline-primary fw-bold" type="button" @click="openModal(false,item)">編輯</button>
+                            <button class="btn btn-outline-danger fw-bold" type="button" @click="openDelModal(item)">刪除</button>
                         </div>
                     </td>
                 </tr>
