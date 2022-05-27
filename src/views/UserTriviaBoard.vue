@@ -7,8 +7,8 @@
             </h1>
         </div>
     </div>
-    <router-view></router-view>
-    <Footer></Footer>
+    <router-view />
+    <Footer />
 </template>
 
 <script>

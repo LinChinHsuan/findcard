@@ -1,7 +1,7 @@
 <template>
-    <Navbar></Navbar>
+    <Navbar />
     <div class="container position-relative">
-        <ToastMessages></ToastMessages>
+        <ToastMessages />
         <router-view />    
     </div>
 </template>

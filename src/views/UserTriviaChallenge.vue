@@ -75,7 +75,7 @@
             </div>
         </div>             
     </div>
-    <SectionBanner :info="SectionCouponBanner"></SectionBanner>
+    <SectionBanner :info="SectionCouponBanner" />
 </template>
 
 <script>

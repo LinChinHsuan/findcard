@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Loading :active="isLoading"></Loading>
+        <Loading :active="isLoading" />
         <div class="text-end mt-4">
             <button class="btn btn-primary fw-bold text-white" type="button" @click="openCouponModal(true)">
                 建立新的優惠券
@@ -40,7 +40,7 @@
                 </tbody>
             </table>
         </div>
-        <Pagination :pages="pagination" @emit-pages="getCoupons"></Pagination>
+        <Pagination :pages="pagination" @emit-pages="getCoupons" />
         <couponModal  ref="couponModal" :coupon="tempCoupon" @update-coupon="updateCoupon"/>
         <DelModal ref="delModal" :item="tempCoupon" @del-item="delCoupon"/>
     </div>

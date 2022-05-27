@@ -383,7 +383,7 @@
       </template>    
     </div>  
   </div>
-  <Footer></Footer>
+  <Footer />
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-    <Loading :active="isLoading"></Loading>
+    <Loading :active="isLoading" />
     <div class="table-responsive">
         <table class="table mt-4">
             <thead>
@@ -46,9 +46,9 @@
             </tbody>
         </table>
     </div>
-  <OrderModal ref="orderModal" :order="tempOrder" @update-order="updateOrder"></OrderModal>
-  <DelModal :item="tempOrder" ref="delModal" @del-item="delOrder"></DelModal>
-  <Pagination :pages="pagination" @emit-pages="getOrders"></Pagination>
+  <OrderModal ref="orderModal" :order="tempOrder" @update-order="updateOrder" />
+  <DelModal :item="tempOrder" ref="delModal" @del-item="delOrder" />
+  <Pagination :pages="pagination" @emit-pages="getOrders" />
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <Loading :active="isLoading"></Loading>
+  <Loading :active="isLoading" />
   <div class="row mt-4">
     <div class="col-xl-6">
       <div class="table-responsive">

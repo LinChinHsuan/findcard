@@ -30,7 +30,7 @@
       </div>
     </div>
   </div>
-  <Footer class="position-fixed bottom-0 w-100"></Footer>
+  <Footer class="position-fixed bottom-0 w-100" />
 </template>
 
 <script>

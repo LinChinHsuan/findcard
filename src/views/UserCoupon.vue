@@ -48,11 +48,11 @@
           </div>
         </div>
       </div>
-      <SectionOnSale></SectionOnSale>
+      <SectionOnSale />
     </div>
   </div>
-  <SectionBanner :info="SectionTriviaBanner"></SectionBanner>
-  <Footer></Footer>
+  <SectionBanner :info="SectionTriviaBanner" />
+  <Footer />
 </template>
 
 <script>

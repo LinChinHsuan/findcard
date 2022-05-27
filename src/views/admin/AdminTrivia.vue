@@ -1,5 +1,5 @@
 <template>
-    <Loading :active="isLoading"></Loading>
+    <Loading :active="isLoading" />
     <div class="text-end pt-4">
         <button type="button" class="btn btn-primary fw-bold text-white" @click="openModal(true)">建立新的冷知識</button>
     </div>
@@ -35,9 +35,9 @@
             </tbody>
         </table>  
     </div>
-    <Pagination :pages="pagination" @emit-pages="getTrivia"></Pagination>
-    <TriviaModal ref="triviaModal" :trivia="tempTrivia" @update-trivia="updateTrivia"></TriviaModal>
-    <DelModal ref="delModal" :item="tempTrivia" @del-item="delTrivia"></DelModal>
+    <Pagination :pages="pagination" @emit-pages="getTrivia" />
+    <TriviaModal ref="triviaModal" :trivia="tempTrivia" @update-trivia="updateTrivia" />
+    <DelModal ref="delModal" :item="tempTrivia" @del-item="delTrivia" />
 </template>
 
 <script>

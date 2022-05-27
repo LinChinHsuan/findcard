@@ -99,7 +99,7 @@
                 </div>
             </div>
         </div>
-        <SectionBanner :info="SectionCouponBanner"></SectionBanner>
+        <SectionBanner :info="SectionCouponBanner" />
         <div class="container pt-5">
             <h3 class="d-flex justify-content-center mb-4">
                 <span class="pb-2 me-2 fs-1 fw-bolder">最新消息</span>
@@ -150,9 +150,9 @@
                     </ul>
                 </div>
             </div>
-            <SectionOnSale></SectionOnSale>
+            <SectionOnSale />
         </div>
-        <SectionBanner :info="SectionTriviaBanner"></SectionBanner>
+        <SectionBanner :info="SectionTriviaBanner" />
         <div class="container py-5">
             <h3 class="d-flex justify-content-center mb-4">
                 <span class="pb-2 me-2 fs-1 fw-bolder">顧客評價</span>
@@ -329,7 +329,7 @@
             </div>
         </div>    
     </div>
-    <Footer></Footer>
+    <Footer />
 </template>
 
 <script>

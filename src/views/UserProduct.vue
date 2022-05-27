@@ -72,11 +72,11 @@
                     </div>
                 </div>
             </div>
-            <SectionOnSale></SectionOnSale>
+            <SectionOnSale />
         </div>        
     </div>
-    <SectionBanner :info="SectionCouponBanner"></SectionBanner>
-    <Footer></Footer>
+    <SectionBanner :info="SectionCouponBanner" />
+    <Footer />
 </template>
 
 <script>
