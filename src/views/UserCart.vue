@@ -23,7 +23,7 @@
             <span class="pb-2 me-2 fw-bolder">3. 完成訂單</span>
             <span>/ Checkout</span>
           </h1>
-        </div>          
+        </div>
       </div>
       <div class="d-lg-none col-md-8 mx-auto">
         <div class="d-flex justify-content-center mt-5 mb-3" v-if="step !== 0">
@@ -39,7 +39,7 @@
             <span class="pb-2 me-2 fw-bolder">3. 完成訂單</span>
             <span class="align-self-end">/ Checkout</span>
           </h1>
-        </div>          
+        </div>
       </div>
     </div>
   </div>
@@ -47,7 +47,7 @@
     <div class="spinner-border text-primary" role="status">
         <span class="visually-hidden">Loading...</span>
     </div>
-  </div>  
+  </div>
   <div class="bg-light" v-else>
     <div class="d-flex flex-column justify-content-center align-items-center text-secondary vh-remain" v-if="!cart.carts.length">
         <span class="material-icons cart mb-3">production_quantity_limits</span>
@@ -58,86 +58,18 @@
       <template v-if="step === 0">
         <div class="container d-none d-md-block">
           <div class="row">
-              <div class="col-lg-10 col-xl-8 mx-auto">
-                      <h3 class="fs-5 text-center border-bottom pb-3">購物清單</h3>
-                      <table class="table table-borderless align-middle mt-3">
-                          <tr>
-                            <th width="60">刪除</th>
-                            <th class="text-center">商品</th>
-                            <th class="text-center d-none d-lg-table-cell">單價</th>
-                            <th class="text-center" width="150">數量</th>
-                            <th class="text-end px-0" width="120">總計</th>
-                          </tr>
-                          <tr v-for="item in cart.carts" :key="item.id">
-                            <td>
-                              <button type="button" class="btn btn-outline-danger btn-sm border border-danger p-2 d-flex align-items-center" @click="delCartProduct(item.id)">
-                                <span class="material-icons">
-                                  delete_outline
-                                </span>
-                              </button>
-                            </td>
-                            <td class="d-flex align-items-center px-0">
-                                <img :src="item.product.imageUrl" class="productImg" :alt="item.product.title"/>
-                                <span class="ms-3 p-0">{{ item.product.title }}</span>
-                            </td>
-                            <td class="d-none d-lg-table-cell text-center">${{ item.product.price }}</td>
-                            <td>
-                              <div class="d-flex align-items-center">
-                                  <span class="material-icons text-primary p-2 qtyCounter" @click="qtyAdjust(item, -1)">remove</span>
-                                  <span class="flex-grow-1 text-center">{{ item.qty }}</span>
-                                  <span class="material-icons text-primary p-2 qtyCounter" @click="qtyAdjust(item, 1)">add</span>
-                              </div>
-                            </td>
-                            <td class="text-end px-0" :class="{ 'text-success': item.coupon}">
-                                <small class="text-success p-0" v-if="item.coupon">折扣價：</small>
-                                ${{ parseInt(item.final_total) }}
-                            </td>
-                          </tr>
-                      </table>
-                      <div class="input-group pb-4">
-                          <button class="btn btn-outline-danger me-5" type="button" @click="delAllCartProducts">
-                            清空購物車
-                          </button>
-                          <div class="w-50 d-flex ms-auto">
-                            <input type="text" class="form-control rounded-0" placeholder="請輸入優惠碼" v-model="coupon"/>
-                            <button class="btn btn-outline-primary fw-bold" type="button" @click="useCoupon">
-                                套用優惠碼
-                            </button>                        
-                          </div>
-                      </div>                    
-                      <table class="table table-borderless fw-bold mb-4">
-                          <tr>
-                              <td class="px-0 pb-0">運費</td>
-                              <td class="text-end px-0 pb-0">NT$ 0</td>
-                          </tr>
-                          <tr v-if="cart.total === cart.final_total">
-                              <td class="px-0">總金額</td>
-                              <td class="text-end">NT$ {{ cart.total }}</td>
-                          </tr>
-                          <tr v-else>
-                              <td class="text-success px-0">折扣後總價</td>
-                              <td class="text-end text-success">
-                              NT$ {{ parseInt(cart.final_total) }}
-                              </td>
-                          </tr>
-                      </table>
-                      <div class="text-end">
-                        <button type="button" class="btn btn-primary btn-lg text-white fw-bold" @click="step = 1">確認結帳</button>
-                      </div>              
-              </div>
-          </div>
-        </div>
-        <div class="d-md-none px-3">
-          <h3 class="fs-5 text-center border-bottom pb-3">購物清單</h3>
-          <table class="table table-borderless align-middle mt-3">
-              <tr>
-                <th class="d-none d-sm-table-cell" width="60">刪除</th>
-                <th class="text-center">商品</th>
-                <th class="text-center" width="150">數量</th>
-                <th class="text-end px-0 d-none d-sm-table-cell" width="120">總計</th>
-              </tr>
-              <tr v-for="item in cart.carts" :key="item.id">
-                  <td class="d-none d-sm-table-cell">
+            <div class="col-lg-10 col-xl-8 mx-auto">
+              <h3 class="fs-5 text-center border-bottom pb-3">購物清單</h3>
+              <table class="table table-borderless align-middle mt-3">
+                <tr>
+                  <th width="60">刪除</th>
+                  <th class="text-center">商品</th>
+                  <th class="text-center d-none d-lg-table-cell">單價</th>
+                  <th class="text-center" width="150">數量</th>
+                  <th class="text-end px-0" width="120">總計</th>
+                </tr>
+                <tr v-for="item in cart.carts" :key="item.id">
+                  <td>
                     <button type="button" class="btn btn-outline-danger btn-sm border border-danger p-2 d-flex align-items-center" @click="delCartProduct(item.id)">
                       <span class="material-icons">
                         delete_outline
@@ -145,21 +77,89 @@
                     </button>
                   </td>
                   <td class="d-flex align-items-center px-0">
-                      <img :src="item.product.imageUrl" class="productImg px-0 me-2" :alt="item.product.title"/>
-                      <span class="p-0 py-2">{{ item.product.title }}</span>
+                    <img :src="item.product.imageUrl" class="productImg" :alt="item.product.title"/>
+                    <span class="ms-3 p-0">{{ item.product.title }}</span>
                   </td>
+                  <td class="d-none d-lg-table-cell text-center">${{ item.product.price }}</td>
                   <td>
-                      <div class="d-flex align-items-center p-0">
-                          <span class="material-icons text-primary p-2 qtyCounter" @click="qtyAdjust(item, -1)">remove</span>
-                          <span class="flex-grow-1 text-center">{{ item.qty }}</span>
-                          <span class="material-icons text-primary p-2 qtyCounter" @click="qtyAdjust(item, 1)">add</span>
-                      </div>
+                    <div class="d-flex align-items-center">
+                      <span class="material-icons text-primary p-2 qtyCounter" @click="qtyAdjust(item, -1)">remove</span>
+                      <span class="flex-grow-1 text-center">{{ item.qty }}</span>
+                      <span class="material-icons text-primary p-2 qtyCounter" @click="qtyAdjust(item, 1)">add</span>
+                    </div>
                   </td>
-                  <td class="text-end px-0 d-none d-sm-table-cell" :class="{ 'text-success': item.coupon}">
-                      <small class="text-success p-0" v-if="item.coupon">折扣價：</small>
-                      ${{ parseInt(item.final_total) }}
+                  <td class="text-end px-0" :class="{ 'text-success': item.coupon}">
+                    <small class="text-success p-0" v-if="item.coupon">折扣價：</small>
+                    ${{ parseInt(item.final_total) }}
                   </td>
-              </tr>
+                </tr>
+              </table>
+              <div class="input-group pb-4">
+                <button class="btn btn-outline-danger me-5" type="button" @click="delAllCartProducts">
+                  清空購物車
+                </button>
+                <div class="w-50 d-flex ms-auto">
+                  <input type="text" class="form-control rounded-0" placeholder="請輸入優惠碼" v-model="coupon"/>
+                  <button class="btn btn-outline-primary fw-bold" type="button" @click="useCoupon">
+                    套用優惠碼
+                  </button>
+                </div>
+              </div>
+              <table class="table table-borderless fw-bold mb-4">
+                <tr>
+                  <td class="px-0 pb-0">運費</td>
+                  <td class="text-end px-0 pb-0">NT$ 0</td>
+                </tr>
+                <tr v-if="cart.total === cart.final_total">
+                  <td class="px-0">總金額</td>
+                  <td class="text-end">NT$ {{ cart.total }}</td>
+                </tr>
+                <tr v-else>
+                  <td class="text-success px-0">折扣後總價</td>
+                  <td class="text-end text-success">
+                    NT$ {{ parseInt(cart.final_total) }}
+                  </td>
+                </tr>
+              </table>
+              <div class="text-end">
+                <button type="button" class="btn btn-primary btn-lg text-white fw-bold" @click="step = 1">確認結帳</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-md-none px-3">
+          <h3 class="fs-5 text-center border-bottom pb-3">購物清單</h3>
+          <table class="table table-borderless align-middle mt-3">
+            <tr>
+              <th class="d-none d-sm-table-cell" width="60">刪除</th>
+              <th class="text-center">商品</th>
+              <th class="text-center" width="150">數量</th>
+              <th class="text-end px-0 d-none d-sm-table-cell" width="120">總計</th>
+            </tr>
+            <tr v-for="item in cart.carts" :key="item.id">
+              <td class="d-none d-sm-table-cell">
+                <button type="button" class="btn btn-outline-danger btn-sm border border-danger p-2 d-flex align-items-center" @click="delCartProduct(item.id)">
+                  <span class="material-icons">
+                    delete_outline
+                  </span>
+                </button>
+              </td>
+              <td class="d-flex align-items-center px-0">
+                <img :src="item.product.imageUrl" class="productImg px-0 me-2" :alt="item.product.title"/>
+                <span class="p-0 py-2">{{ item.product.title }}</span>
+              </td>
+              <td>
+                <div class="d-flex align-items-center p-0">
+                  <span class="material-icons text-primary p-2 qtyCounter" @click="qtyAdjust(item, -1)">remove</span>
+                  <span class="flex-grow-1 text-center">{{ item.qty }}</span>
+                  <span class="material-icons text-primary p-2 qtyCounter" @click="qtyAdjust(item, 1)">add</span>
+                </div>
+              </td>
+              <td class="text-end px-0 d-none d-sm-table-cell" :class="{ 'text-success': item.coupon}">
+                <small class="text-success p-0" v-if="item.coupon">折扣價：</small>
+                  ${{ parseInt(item.final_total) }}
+              </td>
+            </tr>
           </table>
           <div class="input-group pb-4">
             <button class="d-none d-sm-block btn btn-outline-danger me-2 me-sm-5" type="button" @click="delAllCartProducts">
@@ -169,22 +169,22 @@
             <button class="btn btn-outline-primary fw-bold" type="button" @click="useCoupon">
                 套用優惠碼
             </button>
-          </div>    
+          </div>
           <table class="table table-borderless fw-bold">
-              <tr>
-                  <td class="px-0 pb-0">運費</td>
-                  <td class="text-end px-0 pb-0">NT$ 0</td>
-              </tr>
-              <tr v-if="cart.total === cart.final_total">
-                  <td class="px-0">總金額</td>
-                  <td class="text-end">NT$ {{ cart.total }}</td>
-              </tr>
-              <tr v-else>
-                  <td class="text-success px-0">折扣價</td>
-                  <td class="text-end text-success">
-                  NT$ {{ parseInt(cart.final_total) }}
-                  </td>
-              </tr>
+            <tr>
+              <td class="px-0 pb-0">運費</td>
+              <td class="text-end px-0 pb-0">NT$ 0</td>
+            </tr>
+            <tr v-if="cart.total === cart.final_total">
+              <td class="px-0">總金額</td>
+              <td class="text-end">NT$ {{ cart.total }}</td>
+            </tr>
+            <tr v-else>
+              <td class="text-success px-0">折扣價</td>
+              <td class="text-end text-success">
+                NT$ {{ parseInt(cart.final_total) }}
+              </td>
+            </tr>
           </table>
           <div class="text-end">
             <button type="button" class="btn btn-primary btn-lg text-white fw-bold" @click="step = 1">確認結帳</button>
@@ -194,99 +194,88 @@
       <template v-if="step !== 0">
         <div class="container">
           <div class="row gx-5">
-            <template v-if="step === 1">          
+            <template v-if="step === 1">
               <div class="d-none d-lg-block col-6">
-                  <h3 class="fs-5 text-center border-bottom pb-3">清單明細</h3>
-                  <table class="table table-borderless align-middle mt-3">
-                      <tr>
-                        <th class="text-center">商品</th>
-                        <th class="text-center">數量</th>
-                        <th class="text-end px-0">總計</th>
-                      </tr>
-                      <tr v-for="item in cart.carts" :key="item.id">
-                        <td class="d-flex align-items-center px-0">
-                            <img :src="item.product.imageUrl" class="productImg" :alt="item.product.title"/>
-                            <span class="ms-3 p-0">{{ item.product.title }}</span>
-                        </td>
-                        <td class="text-center">
-                            {{ item.qty }}
-                        </td>
-                        <td class="text-end px-0" :class="{ 'text-success': item.coupon}">
-                            <small class="text-success p-0" v-if="item.coupon">折扣價：</small>
-                            ${{ parseInt(item.final_total) }}
-                        </td>
-                      </tr>
-                  </table>                   
-                  <table class="table table-borderless fw-bold mb-4">
-                      <tr>
-                          <td class="px-0 pb-0">運費</td>
-                          <td class="text-end px-0 pb-0">NT$ 0</td>
-                      </tr>
-                      <tr v-if="cart.total === cart.final_total">
-                          <td class="px-0">總金額</td>
-                          <td class="text-end">NT$ {{ cart.total }}</td>
-                      </tr>
-                      <tr v-else>
-                          <td class="text-success px-0">折扣後總價</td>
-                          <td class="text-end text-success">
-                          NT$ {{ parseInt(cart.final_total) }}
-                          </td>
-                      </tr>
-                  </table>
+                <h3 class="fs-5 text-center border-bottom pb-3">清單明細</h3>
+                <table class="table table-borderless align-middle mt-3">
+                  <tr>
+                    <th class="text-center">商品</th>
+                    <th class="text-center">數量</th>
+                    <th class="text-end px-0">總計</th>
+                  </tr>
+                  <tr v-for="item in cart.carts" :key="item.id">
+                    <td class="d-flex align-items-center px-0">
+                      <img :src="item.product.imageUrl" class="productImg" :alt="item.product.title"/>
+                      <span class="ms-3 p-0">{{ item.product.title }}</span>
+                    </td>
+                    <td class="text-center">
+                      {{ item.qty }}
+                    </td>
+                    <td class="text-end px-0" :class="{ 'text-success': item.coupon}">
+                      <small class="text-success p-0" v-if="item.coupon">折扣價：</small>
+                      ${{ parseInt(item.final_total) }}
+                    </td>
+                  </tr>
+                </table>
+                <table class="table table-borderless fw-bold mb-4">
+                  <tr>
+                    <td class="px-0 pb-0">運費</td>
+                    <td class="text-end px-0 pb-0">NT$ 0</td>
+                  </tr>
+                  <tr v-if="cart.total === cart.final_total">
+                    <td class="px-0">總金額</td>
+                    <td class="text-end">NT$ {{ cart.total }}</td>
+                  </tr>
+                  <tr v-else>
+                    <td class="text-success px-0">折扣後總價</td>
+                    <td class="text-end text-success">
+                      NT$ {{ parseInt(cart.final_total) }}
+                    </td>
+                  </tr>
+                </table>
               </div>
               <div class="col-lg-6">
                 <h3 class="fs-5 text-center border-bottom pb-3">顧客資訊</h3>
                 <VForm class="mt-3" v-slot="{ errors }" @submit="createOrder">
                   <div class="form-floating mb-3">
-                    <VField id="email" name="email" type="email" class="form-control"
-                            :class="{ 'is-invalid': errors['email'] }"
-                            placeholder="請輸入 Email" rules="email|required"
-                            v-model="form.user.email"></VField>
+                    <VField id="email" name="email" type="email" class="form-control" :class="{ 'is-invalid': errors['email'] }"
+                      placeholder="請輸入 Email" rules="email|required" v-model="form.user.email"></VField>
                     <label for="email" class="form-label">Email*</label>
                     <ErrorMessage name="email" class="invalid-feedback"></ErrorMessage>
                   </div>
-
                   <div class="form-floating mb-3">
-                    <VField id="name" name="姓名" type="text" class="form-control"
-                            :class="{ 'is-invalid': errors['姓名'] }"
-                            placeholder="請輸入姓名" rules="required"
-                            v-model="form.user.name"></VField>
+                    <VField id="name" name="姓名" type="text" class="form-control" :class="{ 'is-invalid': errors['姓名'] }"
+                      placeholder="請輸入姓名" rules="required" v-model="form.user.name"></VField>
                     <label for="name" class="form-label">收件人姓名*</label>
                     <ErrorMessage name="姓名" class="invalid-feedback"></ErrorMessage>
                   </div>
-
                   <div class="form-floating mb-3">
-                    <VField id="tel" name="電話" type="tel" class="form-control"
-                            :class="{ 'is-invalid': errors['電話'] }"
-                            placeholder="請輸入電話" rules="required"
-                            v-model="form.user.tel"></VField>
+                    <VField id="tel" name="電話" type="tel" class="form-control" :class="{ 'is-invalid': errors['電話'] }"
+                      placeholder="請輸入電話" rules="required" v-model="form.user.tel"></VField>
                     <label for="tel" class="form-label">收件人電話*</label>
                     <ErrorMessage name="電話" class="invalid-feedback"></ErrorMessage>
                   </div>
-
                   <div class="form-floating mb-3">
-                    <VField id="address" name="地址" type="text" class="form-control"
-                            :class="{ 'is-invalid': errors['地址'] }"
-                            placeholder="請輸入地址" rules="required"
-                            v-model="form.user.address"></VField>
+                    <VField id="address" name="地址" type="text" class="form-control" :class="{ 'is-invalid': errors['地址'] }"
+                      placeholder="請輸入地址" rules="required" v-model="form.user.address"></VField>
                       <label for="address" class="form-label">收件人地址*</label>
                     <ErrorMessage name="地址" class="invalid-feedback"></ErrorMessage>
                   </div>
                   <div class="form-floating mb-3">
                     <textarea class="form-control" id="ps" placeholder="備註留言"
                       style="height: 150px;" v-model="form.message"></textarea>
-                      <label for="ps">備註</label>
+                    <label for="ps">備註</label>
                   </div>
                   <div class="text-end">
                     <button type="submit" class="btn btn-primary btn-lg w-100 fw-bold text-white" :disabled="!isFillIn" @submit="createOrder">
                       <div class="spinner-border text-white spinner-border-sm" role="status" v-if="isOrderLoading">
-                          <span class="visually-hidden">Loading...</span>
+                        <span class="visually-hidden">Loading...</span>
                       </div>
                       送出訂單
                     </button>
                   </div>
-                </VForm>               
-              </div>                
+                </VForm>
+              </div>
             </template>
             <template v-if="step === 2">
               <div class="col-lg-8 col-xl-6 mx-auto">
@@ -294,13 +283,11 @@
                 <div class="accordion my-3" id="accordionExample">
                   <div class="accordion-item rounded-0">
                     <h2 class="accordion-header" id="headingOne">
-                      <button class="accordion-button collapsed rounded-0" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseOne">
+                      <button class="accordion-button collapsed rounded-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
                         商品列表
                       </button>
                     </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
-                      data-bs-parent="#accordionExample">
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                       <div class="accordion-body">
                         <table class="table align-middle">
                           <thead>
@@ -377,134 +364,134 @@
                   <router-link to="/products" class="btn btn-primary fs-5 text-white fw-bold w-100 py-3">回去購物</router-link>
                 </div>
               </div>
-            </template>                      
+            </template>
           </div>
         </div>
-      </template>    
-    </div>  
+      </template>
+    </div>
   </div>
   <Footer />
 </template>
 
 <script>
-import emitter from '@/methods/emitter';
-import Footer from "@/components/Footer";
+import emitter from '@/methods/emitter'
+import Footer from '@/components/Footer'
 export default {
-  data() {
+  data () {
     return {
       step: 0,
       cart: {
         carts: []
       },
-      coupon: "",
+      coupon: '',
       isLoading: false,
       isOrderLoading: false,
       form: {
         user: {
-          name: "",
-          email: "",
-          tel: "",
-          address: ""
+          name: '',
+          email: '',
+          tel: '',
+          address: ''
         },
-        message: ""
+        message: ''
       },
       isFillIn: false,
-      orderId: "",
+      orderId: '',
       order: {}
-    };
+    }
   },
   components: {
-    Footer,
+    Footer
   },
   watch: {
     form: {
-      handler(n){
-        if(n.user.address && n.user.tel && n.user.email && n.user.name){
-          this.isFillIn = true;
+      handler (n) {
+        if (n.user.address && n.user.tel && n.user.email && n.user.name) {
+          this.isFillIn = true
         }
       },
       deep: true
     }
   },
   methods: {
-    getCart() {
-      this.isLoading = true;
-      const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/cart`;
+    getCart () {
+      this.isLoading = true
+      const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/cart`
       this.$http.get(api).then((res) => {
         if (res.data.success) {
-          this.cart = res.data.data;
+          this.cart = res.data.data
         }
-        this.isLoading = false;
-      });
+        this.isLoading = false
+      })
     },
-    delCartProduct(id){
-      const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/cart/${id}`;
+    delCartProduct (id) {
+      const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/cart/${id}`
       this.$http.delete(api).then(() => {
-        emitter.emit('update-cart');
-        this.getCart();
-      });          
+        emitter.emit('update-cart')
+        this.getCart()
+      })
     },
-    qtyAdjust(item, i){
-      if(item.qty === 1 && i === -1){
+    qtyAdjust (item, i) {
+      if (item.qty === 1 && i === -1) {
         return
       }
-      item.qty += i;
-      const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/cart/${item.id}`;
-      this.$http.put(api, { data: { product_id: item.id, qty: item.qty } } ).then(() => {
-        this.getCart();
-      });  
+      item.qty += i
+      const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/cart/${item.id}`
+      this.$http.put(api, { data: { product_id: item.id, qty: item.qty } }).then(() => {
+        this.getCart()
+      })
     },
-    delAllCartProducts(){
-      const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/carts`;
+    delAllCartProducts () {
+      const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/carts`
       this.$http.delete(api).then(() => {
-          emitter.emit('update-cart');
-          this.getCart();
-      }); 
+        emitter.emit('update-cart')
+        this.getCart()
+      })
     },
-    useCoupon(){
-      const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/coupon`;
-      this.$http.post(api,{ data: { code: this.coupon}}).then(() => {
-        this.getCart();
+    useCoupon () {
+      const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/coupon`
+      this.$http.post(api, { data: { code: this.coupon } }).then(() => {
+        this.getCart()
         this.$swal({
           title: '已套用優惠券',
           width: '15rem'
-        });
-        this.coupon = "";
-      });
+        })
+        this.coupon = ''
+      })
     },
-    createOrder() {
-      this.isLoading = true;
-      const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/order`;
-      const order = this.form;
+    createOrder () {
+      this.isLoading = true
+      const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/order`
+      const order = this.form
       this.$http.post(api, { data: order })
         .then((res) => {
-          emitter.emit('update-cart');
-          this.orderId = res.data.orderId;
-          this.getOrder(this.orderId);
-          this.isLoading = false;
-          this.step = 2;
-        });
+          emitter.emit('update-cart')
+          this.orderId = res.data.orderId
+          this.getOrder(this.orderId)
+          this.isLoading = false
+          this.step = 2
+        })
     },
-    getOrder(id){
-      const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/order/${id}`;
+    getOrder (id) {
+      const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/order/${id}`
       this.$http.get(api)
         .then((res) => {
-          this.order = res.data.order;
-        });
+          this.order = res.data.order
+        })
     },
-    payOrder(){
-      const id = this.orderId;
-      const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/pay/${id}`;
+    payOrder () {
+      const id = this.orderId
+      const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/pay/${id}`
       this.$http.post(api)
         .then(() => {
-          this.step = 3;
-        });
+          this.step = 3
+        })
     }
   },
-  created() {
-    this.getCart();
-  },
-};
+  created () {
+    this.getCart()
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -522,20 +509,20 @@ export default {
   }
 }
 .vh-remain{
-    min-height: calc(100vh - 300px);
+  min-height: calc(100vh - 300px);
 }
 .material-icons.cart{
-    font-size: 64px;
+  font-size: 64px;
 }
 th,td,.btn{
-    white-space: nowrap;
+  white-space: nowrap;
 }
 .productImg {
   width: 100px;
   height: 100px;
   object-fit: cover;
   @media(max-width: 425px){
-      display: none;
+    display: none;
   }
 }
 .qtyCounter{
@@ -545,14 +532,14 @@ th,td,.btn{
   }
 }
 .btn:hover,.btn:active{
-    color: #FFFFFF;
+  color: #FFFFFF;
 }
 .accordion-button{
   background-color: #ffffff;
   color: #212529;
 }
 .accordion-item .table > :not(:first-child) {
-    border-top: 1px solid currentColor;
+  border-top: 1px solid currentColor;
 }
 .active{
   :first-child{

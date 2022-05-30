@@ -1,29 +1,27 @@
 <template>
   <div class="toast-container position-fixed">
-    <Toast v-for="(msg, key) in messages" :key="key"
-      :msg="msg"
-    />
+    <Toast v-for="(msg, key) in messages" :key="key" :msg="msg" />
   </div>
 </template>
 
 <script>
-import Toast from '@/components/Toast.vue';
+import Toast from '@/components/Toast.vue'
 
 export default {
   components: { Toast },
-  data() {
+  data () {
     return {
-      messages: [],
-    };
+      messages: []
+    }
   },
   inject: ['emitter'],
-  mounted() {
-    this.emitter.on("push-message", (message) => {
-        const { style = "success", title, content} = message;
-        this.messages.push({ style, title, content });
+  mounted () {
+    this.emitter.on('push-message', (message) => {
+      const { style = 'success', title, content } = message
+      this.messages.push({ style, title, content })
     })
-  },
-};
+  }
+}
 </script>
 
 <style lang="scss" scoped>

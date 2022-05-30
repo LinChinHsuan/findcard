@@ -2,8 +2,8 @@
   <div class="container-fliud banner">
     <div class="bg-dark bg-opacity-75 w-100 h-100 d-flex align-items-center">
       <h1 class="w-100 d-flex align-items-center justify-content-center mb-0 mt-5">
-          <span class="pb-2 me-2 fs-1 fw-bolder text-white">周年慶抽獎</span>
-          <span class="fs-3 text-primary align-self-end">/ Raffle</span>        
+        <span class="pb-2 me-2 fs-1 fw-bolder text-white">周年慶抽獎</span>
+        <span class="fs-3 text-primary align-self-end">/ Raffle</span>
       </h1>
     </div>
   </div>
@@ -22,8 +22,7 @@
             </div>
             <div class="d-flex">
               <div class="couponCard d-md-block mx-2" v-for="(item,index) in coupons" :key="index" @click="chooseCard(item)" :class="{'choose': choose.code === item.code, 'd-none':  choose.code !== item.code}">
-                <img src="https://storage.googleapis.com/vue-course-api.appspot.com/vuefindcard/1650868538931.png?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=HLx2GWEMEirAm0qbQ5wJXH9RJvMHKNEdKXiisfw3jqR1tlHlOiC%2FiomXTEfYJjJ2Q0zp3ItCFCd%2B9YN6RhngDn5aKNrcTh55LDZT4hv%2B%2BrAj8kWJuvjB3eNeNpZav3Wisb2E3fZKU4GVZNSHQ9Q5eZmreYu9TMZpK1ms7tf3kA2JA1Z%2ByG6XVZ7%2FckG3KQnRoY8iORN2FMhGUGKciCWUK8qZIBu3PRmE14LtG9o%2FzieXleAI3qehW2AURVsW8IAlkLEk%2FYxT4m7oSY3tMDa6nspK58ZfV14NKQH3hxNHQXAScrLLddgtn6RgmVH7vK2frFORKhGH9QVfBK4uP%2BTrxw%3D%3D"
-                alt="抽獎卡" :class="{'cursorPointer': choose === ''}">
+                <img src="https://storage.googleapis.com/vue-course-api.appspot.com/vuefindcard/1650868538931.png?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=HLx2GWEMEirAm0qbQ5wJXH9RJvMHKNEdKXiisfw3jqR1tlHlOiC%2FiomXTEfYJjJ2Q0zp3ItCFCd%2B9YN6RhngDn5aKNrcTh55LDZT4hv%2B%2BrAj8kWJuvjB3eNeNpZav3Wisb2E3fZKU4GVZNSHQ9Q5eZmreYu9TMZpK1ms7tf3kA2JA1Z%2ByG6XVZ7%2FckG3KQnRoY8iORN2FMhGUGKciCWUK8qZIBu3PRmE14LtG9o%2FzieXleAI3qehW2AURVsW8IAlkLEk%2FYxT4m7oSY3tMDa6nspK58ZfV14NKQH3hxNHQXAScrLLddgtn6RgmVH7vK2frFORKhGH9QVfBK4uP%2BTrxw%3D%3D" alt="抽獎卡" :class="{'cursorPointer': choose === ''}">
                 <div class="text h-100 w-100 d-flex flex-column justify-content-center text-center text-white border border-4 border-white">
                   <p class="fs-4 mb-4">{{ item.title }}</p>
                   <p class="fs-5 mb-0">折扣碼</p>
@@ -32,8 +31,7 @@
                 </div>
               </div>
               <div class="couponCard d-md-none mx-2" @click="chooseCard(coupons[1])" :class="{'d-none': choose !== ''}">
-                <img src="https://storage.googleapis.com/vue-course-api.appspot.com/vuefindcard/1650868538931.png?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=HLx2GWEMEirAm0qbQ5wJXH9RJvMHKNEdKXiisfw3jqR1tlHlOiC%2FiomXTEfYJjJ2Q0zp3ItCFCd%2B9YN6RhngDn5aKNrcTh55LDZT4hv%2B%2BrAj8kWJuvjB3eNeNpZav3Wisb2E3fZKU4GVZNSHQ9Q5eZmreYu9TMZpK1ms7tf3kA2JA1Z%2ByG6XVZ7%2FckG3KQnRoY8iORN2FMhGUGKciCWUK8qZIBu3PRmE14LtG9o%2FzieXleAI3qehW2AURVsW8IAlkLEk%2FYxT4m7oSY3tMDa6nspK58ZfV14NKQH3hxNHQXAScrLLddgtn6RgmVH7vK2frFORKhGH9QVfBK4uP%2BTrxw%3D%3D"
-                alt="抽獎卡">
+                <img src="https://storage.googleapis.com/vue-course-api.appspot.com/vuefindcard/1650868538931.png?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=HLx2GWEMEirAm0qbQ5wJXH9RJvMHKNEdKXiisfw3jqR1tlHlOiC%2FiomXTEfYJjJ2Q0zp3ItCFCd%2B9YN6RhngDn5aKNrcTh55LDZT4hv%2B%2BrAj8kWJuvjB3eNeNpZav3Wisb2E3fZKU4GVZNSHQ9Q5eZmreYu9TMZpK1ms7tf3kA2JA1Z%2ByG6XVZ7%2FckG3KQnRoY8iORN2FMhGUGKciCWUK8qZIBu3PRmE14LtG9o%2FzieXleAI3qehW2AURVsW8IAlkLEk%2FYxT4m7oSY3tMDa6nspK58ZfV14NKQH3hxNHQXAScrLLddgtn6RgmVH7vK2frFORKhGH9QVfBK4uP%2BTrxw%3D%3D" alt="抽獎卡">
               </div>
             </div>
             <div class="text-center mt-4">
@@ -42,7 +40,7 @@
                 <p class="fs-5 mb-0">折扣碼: {{ choose.code }}</p>
                 <p class="fs-5 mb-3">已可在結帳頁使用</p>
                 <router-link to="/products" class="btn btn-outline-primary btn-lg border-2 fw-bold me-3" type="button">瀏覽商品</router-link>
-                <router-link to="/cart" class="btn btn-primary btn-lg border-2 fw-bold text-white" type="button">立刻使用</router-link>              
+                <router-link to="/cart" class="btn btn-primary btn-lg border-2 fw-bold text-white" type="button">立刻使用</router-link>
               </template>
             </div>
           </div>
@@ -56,63 +54,61 @@
 </template>
 
 <script>
-import SectionOnSale from '@/components/SectionOnSale';
-import SectionBanner from '@/components/SectionBanner';
-import Footer from '@/components/Footer';
+import SectionOnSale from '@/components/SectionOnSale'
+import SectionBanner from '@/components/SectionBanner'
+import Footer from '@/components/Footer'
 export default {
-    data() {
-        return {
-          coupons: [
-            {
-              title: "全館85折優惠",
-              code: "card15off"
-            },
-            {
-              title: "全館5折優惠",
-              code: "findcard"
-            },
-            {
-              title: "全館7折優惠",
-              code: "card30off"
-            }
-          ],
-          choose: "",
-          SectionTriviaBanner: {
-            bgImg: "url(https://storage.googleapis.com/vue-course-api.appspot.com/vuefindcard/1650444820513.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=bH91qiBlELvko2ff5FaMMA4xh%2BjVWxjdyh8UZvb2vDttAzlHj8OatXNicPefiNpwQCEWLuqkICdZRf10taPBCnxGT6J%2F573ntuoxcthyKS9R5tN0c9VJMkJNrDIBKF68ej3nF3hx6y8D92%2FWF9b7I6UyJaw1ZyyfJMKwIPoo7w7exwi5NHS01uw9e0TuALCCV%2B%2BGaUmU84C5t4ejN8xnTQwgj5RMkt7xDVdfySH8ZD8MBOD6HfUAgfijtI9TdDHoVFhCS%2BIM2x5VBvb3%2BJ9Xw%2Bm8kJXuynmTFaP4RzUxl5j%2BugpZGllD%2BLaQVX%2BIHXHU2RLR7S%2BL0YOle%2FFfEmTheg%3D%3D)",
-            title: "撲克冷知識",
-            titleEn: "Trivia",
-            text: "你知道嗎？將撲克牌四種花色重疊在一起的話，就會跑出星星喔",
-            btnText: "了解更多",
-            btnPath: "/trivia"
-          }
+  data () {
+    return {
+      coupons: [
+        {
+          title: '全館85折優惠',
+          code: 'card15off'
+        },
+        {
+          title: '全館5折優惠',
+          code: 'findcard'
+        },
+        {
+          title: '全館7折優惠',
+          code: 'card30off'
         }
-    },
-    components: {
-      SectionOnSale,
-      SectionBanner,
-      Footer
-    },
-    methods: {
-        chooseCard(item){
-          if(this.choose === ""){
-            this.choose = item;
-            setTimeout(()=>{
-              this.$swal({
-                title: `恭喜獲得周年慶${item.title}`,
-                width: '22rem',
-                timer: 7000,
-                timerProgressBar: false
-              });              
-            }, 1500);
-            localStorage.setItem("AnniversaryCoupon", JSON.stringify(item));
-          }else{
-            return
-          }
-        }
-    },
-    created() {
-      this.choose = JSON.parse(localStorage.getItem("AnniversaryCoupon")) || "";
+      ],
+      choose: '',
+      SectionTriviaBanner: {
+        bgImg: 'url(https://storage.googleapis.com/vue-course-api.appspot.com/vuefindcard/1650444820513.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=bH91qiBlELvko2ff5FaMMA4xh%2BjVWxjdyh8UZvb2vDttAzlHj8OatXNicPefiNpwQCEWLuqkICdZRf10taPBCnxGT6J%2F573ntuoxcthyKS9R5tN0c9VJMkJNrDIBKF68ej3nF3hx6y8D92%2FWF9b7I6UyJaw1ZyyfJMKwIPoo7w7exwi5NHS01uw9e0TuALCCV%2B%2BGaUmU84C5t4ejN8xnTQwgj5RMkt7xDVdfySH8ZD8MBOD6HfUAgfijtI9TdDHoVFhCS%2BIM2x5VBvb3%2BJ9Xw%2Bm8kJXuynmTFaP4RzUxl5j%2BugpZGllD%2BLaQVX%2BIHXHU2RLR7S%2BL0YOle%2FFfEmTheg%3D%3D)',
+        title: '撲克冷知識',
+        titleEn: 'Trivia',
+        text: '你知道嗎？將撲克牌四種花色重疊在一起的話，就會跑出星星喔',
+        btnText: '了解更多',
+        btnPath: '/trivia'
+      }
     }
+  },
+  components: {
+    SectionOnSale,
+    SectionBanner,
+    Footer
+  },
+  methods: {
+    chooseCard (item) {
+      if (this.choose === '') {
+        this.choose = item
+        setTimeout(() => {
+          this.$swal({
+            title: `恭喜獲得周年慶${item.title}`,
+            width: '22rem',
+            timer: 7000,
+            timerProgressBar: false
+          })
+        }, 1500)
+        localStorage.setItem('AnniversaryCoupon', JSON.stringify(item))
+      }
+    }
+  },
+  created () {
+    this.choose = JSON.parse(localStorage.getItem('AnniversaryCoupon')) || ''
+  }
 }
 </script>
 
@@ -131,34 +127,34 @@ export default {
   }
 }
 .couponCard{
+  height: 282px;
+  width: 200px;
+  position: relative;
+  img,.text{
+    transition: .9s;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 15px;
+  }
+  .text{
+    background-color: rgba(128, 209, 214, .9);
     height: 282px;
+    transform: rotateY(-180deg);
+  }
+  img{
     width: 200px;
-    position: relative;
-    img,.text{
-        transition: .9s;
-        position: absolute;
-        backface-visibility: hidden;
-        border-radius: 15px;
-    }
-    .text{
-        background-color: rgba(128, 209, 214, .9);
-        height: 282px;
-        transform: rotateY(-180deg);
-    }
-    img{
-        width: 200px;
-    }
+  }
 }
 .cursorPointer{
   cursor: pointer;
 }
 .choose{
-    .text{
-        transform: rotateY(0deg);
-    }
-    img{
-        transform: rotateY(-180deg);
-    }    
+  .text{
+    transform: rotateY(0deg);
+  }
+  img{
+    transform: rotateY(-180deg);
+  }
 }
 .btn{
   transition: .8s;

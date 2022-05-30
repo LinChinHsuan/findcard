@@ -21,16 +21,16 @@
 </template>
 
 <script>
-import modalMixin from "@/mixins/modalMixin";
+import modalMixin from '@/mixins/modalMixin'
 export default {
-    props: {
-        item: {}
-    },
-    data() {
-        return {
-            modal: {}
-        }
-    },
-    mixins: [modalMixin]
+  props: {
+    item: {}
+  },
+  data () {
+    return {
+      modal: {}
+    }
+  },
+  mixins: [modalMixin]
 }
 </script>

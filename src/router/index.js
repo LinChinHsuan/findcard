@@ -34,7 +34,7 @@ const routes = [
           {
             path: 'triviaChallenge',
             name: 'triviaChallenge',
-            component: () => import('../views/UserTriviaChallenge.vue'),
+            component: () => import('../views/UserTriviaChallenge.vue')
           }
         ]
       },
