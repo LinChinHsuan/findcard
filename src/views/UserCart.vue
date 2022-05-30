@@ -70,7 +70,7 @@
                 </tr>
                 <tr v-for="item in cart.carts" :key="item.id">
                   <td>
-                    <button type="button" class="btn btn-outline-danger btn-sm border border-danger p-2 d-flex align-items-center" @click="delCartProduct(item.id)">
+                    <button type="button" class="btn btn-outline-danger btn-sm border border-danger p-2 d-flex align-items-center" @click="delCartModal(item)">
                       <span class="material-icons">
                         delete_outline
                       </span>
@@ -95,7 +95,7 @@
                 </tr>
               </table>
               <div class="input-group pb-4">
-                <button class="btn btn-outline-danger me-5" type="button" @click="delAllCartProducts">
+                <button class="btn btn-outline-danger me-5" type="button" @click="delCartModal()">
                   清空購物車
                 </button>
                 <div class="w-50 d-flex ms-auto">
@@ -138,7 +138,7 @@
             </tr>
             <tr v-for="item in cart.carts" :key="item.id">
               <td class="d-none d-sm-table-cell">
-                <button type="button" class="btn btn-outline-danger btn-sm border border-danger p-2 d-flex align-items-center" @click="delCartProduct(item.id)">
+                <button type="button" class="btn btn-outline-danger btn-sm border border-danger p-2 d-flex align-items-center" @click="delCartModal(item)">
                   <span class="material-icons">
                     delete_outline
                   </span>
@@ -162,7 +162,7 @@
             </tr>
           </table>
           <div class="input-group pb-4">
-            <button class="d-none d-sm-block btn btn-outline-danger me-2 me-sm-5" type="button" @click="delAllCartProducts">
+            <button class="d-none d-sm-block btn btn-outline-danger me-2 me-sm-5" type="button" @click="delCartModal()">
               清空購物車
             </button>
             <input type="text" class="form-control rounded-0" placeholder="請輸入優惠碼" v-model="coupon"/>
@@ -423,6 +423,49 @@ export default {
         }
         this.isLoading = false
       })
+    },
+    delCartModal (item) {
+      if (item) {
+        this.$swal({
+          toast: false,
+          timer: undefined,
+          timerProgressBar: false,
+          position: 'center',
+          icon: 'question',
+          showCancelButton: true,
+          showConfirmButton: true,
+          confirmButtonColor: '#FF5959',
+          confirmButtonText: '刪除',
+          cancelButtonText: '取消',
+          title: `是否刪除${item.product.title}？`,
+          text: '一旦刪除便無法復原',
+          width: '34rem'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            this.delCartProduct(item.id)
+          }
+        })
+      } else {
+        this.$swal({
+          toast: false,
+          timer: undefined,
+          timerProgressBar: false,
+          position: 'center',
+          icon: 'question',
+          showCancelButton: true,
+          showConfirmButton: true,
+          confirmButtonColor: '#FF5959',
+          confirmButtonText: '刪除',
+          cancelButtonText: '取消',
+          title: '是否刪除全部商品？',
+          text: '一旦刪除便無法復原',
+          width: '25rem'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            this.delAllCartProducts()
+          }
+        })
+      }
     },
     delCartProduct (id) {
       const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/cart/${id}`
