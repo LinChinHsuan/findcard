@@ -131,27 +131,27 @@
           <h3 class="fs-5 text-center border-bottom pb-3">購物清單</h3>
           <table class="table table-borderless align-middle mt-3">
             <tr>
-              <th class="d-none d-sm-table-cell" width="60">刪除</th>
+              <th class="text-center pb-2" width="60">刪除</th>
               <th class="text-center">商品</th>
-              <th class="text-center" width="150">數量</th>
+              <th class="text-center">數量</th>
               <th class="text-end px-0 d-none d-sm-table-cell" width="120">總計</th>
             </tr>
             <tr v-for="item in cart.carts" :key="item.id">
-              <td class="d-none d-sm-table-cell">
-                <button type="button" class="btn btn-outline-danger btn-sm border border-danger p-2 d-flex align-items-center" @click="delCartModal(item)">
+              <td>
+                <button type="button" class="btn btn-outline-danger btn-sm border border-danger ms-2 p-2 d-flex align-items-center" @click="delCartModal(item)">
                   <span class="material-icons">
                     delete_outline
                   </span>
                 </button>
               </td>
               <td class="d-flex align-items-center px-0">
-                <img :src="item.product.imageUrl" class="productImg px-0 me-2" :alt="item.product.title"/>
-                <span class="p-0 py-2">{{ item.product.title }}</span>
+                <img :src="item.product.imageUrl" class="d-none d-sm-block productImg px-0 me-2" :alt="item.product.title"/>
+                <span class="white-space-wrap p-2">{{ item.product.title }}</span>
               </td>
               <td>
                 <div class="d-flex align-items-center p-0">
                   <span class="material-icons text-primary p-2 qtyCounter" @click="qtyAdjust(item, -1)">remove</span>
-                  <span class="flex-grow-1 text-center">{{ item.qty }}</span>
+                  <span class="flex-grow-1 text-center p-2">{{ item.qty }}</span>
                   <span class="material-icons text-primary p-2 qtyCounter" @click="qtyAdjust(item, 1)">add</span>
                 </div>
               </td>
@@ -574,6 +574,9 @@ export default {
 }
 th,td,.btn{
   white-space: nowrap;
+}
+.white-space-wrap{
+  white-space: pre-wrap;
 }
 .productImg {
   width: 100px;
