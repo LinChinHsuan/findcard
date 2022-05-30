@@ -1,14 +1,12 @@
 <template>
-<div class="modal fade" id="productModal" tabindex="-1" role="dialog"
-       aria-labelledby="exampleModalLabel" aria-hidden="true" ref="modal">
+  <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" ref="modal">
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content border-0">
         <div class="modal-header bg-primary text-white">
           <h5 class="modal-title fw-bold" id="exampleModalLabel">
             訂單細節
           </h5>
-          <button type="button" class="btn-close"
-                  data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <div class="row">
@@ -60,13 +58,13 @@
                     <th>付款狀態</th>
                     <td class="d-flex">
                       <div class="form-check form-switch">
-                          <input class="form-check-input" type="checkbox" role="switch" id="SwitchCheck" :checked="tempOrder.is_paid" v-model="tempOrder.is_paid">
+                        <input class="form-check-input" type="checkbox" role="switch" id="SwitchCheck" :checked="tempOrder.is_paid" v-model="tempOrder.is_paid">
                       </div>
                       <span v-if="tempOrder.is_paid" class="text-success fw-bold">已付款</span>
                       <span v-else class="text-muted">未付款</span>
                     </td>
                   </tr>
-                  <tr>  
+                  <tr>
                     <th>總金額</th>
                     <td>
                       {{ $filters.currency(tempOrder.total) }}
@@ -77,8 +75,7 @@
               <h3 class="pt-3 pt-lg-0">選購商品</h3>
               <table class="table">
                 <thead>
-                  <tr>
-                  </tr>
+                  <tr></tr>
                 </thead>
                 <tbody>
                   <tr v-for="item in tempOrder.products" :key="item.id">
@@ -98,11 +95,8 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-outline-secondary"
-                  data-bs-dismiss="modal">取消
-          </button>
-          <button type="button" class="btn btn-primary text-white"
-                  @click="$emit('update-order', tempOrder)">確認</button>
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">取消</button>
+          <button type="button" class="btn btn-primary text-white" @click="$emit('update-order', tempOrder)">確認</button>
         </div>
       </div>
     </div>
@@ -110,26 +104,26 @@
 </template>
 
 <script>
-import modalMixin from '@/mixins/modalMixin';
+import modalMixin from '@/mixins/modalMixin'
 export default {
   props: {
     order: {
       type: Object,
-      default() { return {}; },
-    },
+      default () { return {} }
+    }
   },
   watch: {
-    order() {
-      this.tempOrder = { ...this.order };
-    },
+    order () {
+      this.tempOrder = { ...this.order }
+    }
   },
-  data() {
+  data () {
     return {
       status: {},
       modal: '',
       tempOrder: {}
-    };
+    }
   },
   mixins: [modalMixin]
-};
+}
 </script>

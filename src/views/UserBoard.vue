@@ -1,26 +1,26 @@
 <template>
-    <Navbar />
-    <div class="position-relative">
-        <router-view />    
-    </div>
+  <Navbar />
+  <div class="position-relative">
+    <router-view />
+  </div>
 </template>
 
 <script>
-import emitter from '@/methods/emitter';
-import Navbar from '@/components/UserNavbar';
+import emitter from '@/methods/emitter'
+import Navbar from '@/components/UserNavbar'
 export default {
-    data() {
-        return {
-            status: "index"
-        }
-    },
-    components:{
-        Navbar
-    },
-    provide() {
-        return {
-            emitter
-        }
+  data () {
+    return {
+      status: 'index'
     }
+  },
+  components: {
+    Navbar
+  },
+  provide () {
+    return {
+      emitter
+    }
+  }
 }
 </script>

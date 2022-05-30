@@ -8,7 +8,7 @@
       </li>
       <li class="page-item" v-for="page in pages.total_pages" :key="page" :class="{ 'active': page === pages.current_page }">
         <a class="page-link fw-bold h-100" href="#" @click.prevent="updatePage(page)">
-            {{ page }}
+          {{ page }}
         </a>
       </li>
       <li class="page-item" :class="{ 'disabled': !pages.has_next }">
@@ -24,11 +24,11 @@
 export default {
   props: ['pages'],
   methods: {
-    updatePage(page) {
-        this.$emit("emit-pages", page);
-    },
-  },
-};
+    updatePage (page) {
+      this.$emit('emit-pages', page)
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
