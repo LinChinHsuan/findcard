@@ -493,13 +493,28 @@ export default {
     },
     useCoupon () {
       const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/coupon`
-      this.$http.post(api, { data: { code: this.coupon } }).then(() => {
-        this.getCart()
-        this.$swal({
-          title: '已套用優惠券',
-          width: '15rem'
-        })
-        this.coupon = ''
+      this.$http.post(api, { data: { code: this.coupon } }).then((res) => {
+        if (res.data.success) {
+          this.getCart()
+          this.$swal({
+            title: '已套用優惠券',
+            width: '15rem'
+          })
+          this.coupon = ''
+        } else if (this.coupon === '') {
+          this.$swal({
+            icon: 'info',
+            title: '請輸入優惠券',
+            width: '16rem'
+          })
+        } else {
+          this.$swal({
+            icon: 'error',
+            iconColor: '#FF5959',
+            title: '無此優惠券',
+            width: '14rem'
+          })
+        }
       })
     },
     createOrder () {
