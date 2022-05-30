@@ -13,7 +13,7 @@
         </ol>
       </nav>
       <div class="row">
-        <div class="col-lg-5 col-xl-6">
+        <div class="col-lg-5 col-xl-6 position-relative">
           <div v-if="!product.imageUrl" class="d-flex justify-content-center align-items-center h-100">
             <div class="spinner-border text-primary" role="status">
               <span class="visually-hidden">Loading...</span>
@@ -43,6 +43,7 @@
                 <span class="visually-hidden">Next</span>
               </button>
             </div>
+            <span class="cursorPointer material-icons position-absolute rounded-circle fs-4 p-2" :class="{'favorite': isFavorite(product.id)}" @click.stop="toggleFavorite(product)">favorite</span>
           </div>
         </div>
         <div class="col-lg-7 col-xl-6">
@@ -90,6 +91,8 @@ export default {
     return {
       carousel: {},
       product: {},
+      favorite: [],
+      favoriteIds: [],
       qty: 1,
       isLoading: false,
       SectionCouponBanner: {
@@ -122,6 +125,44 @@ export default {
         }
       })
     },
+    getFavorite () {
+      this.favorite = JSON.parse(localStorage.getItem('favorite')) || []
+      this.favoriteIds = []
+      this.favorite.forEach((item) => {
+        this.favoriteIds.push(item.id)
+      })
+    },
+    isFavorite (id) {
+      return this.favoriteIds.some(function (item) {
+        return item === id
+      })
+    },
+    toggleFavorite (item) {
+      const id = item.id
+      const hasFavorite = this.favorite.some((item) => {
+        return item.id === id
+      })
+      if (!hasFavorite) {
+        this.favorite.push(item)
+        localStorage.setItem('favorite', JSON.stringify(this.favorite))
+        this.$swal({
+          title: `已將 ${item.title} 加入我的最愛`,
+          width: '28rem'
+        })
+      } else {
+        const delItem = this.favorite.find((item) => {
+          return item.id === id
+        })
+        this.favorite.splice(this.favorite.indexOf(delItem), 1)
+        localStorage.setItem('favorite', JSON.stringify(this.favorite))
+        this.$swal({
+          title: `取消關注 ${item.title}`,
+          width: '24rem'
+        })
+      }
+      this.getFavorite()
+      emitter.emit('update-favorite')
+    },
     qtyAdjust (num) {
       if (num === 1) {
         this.qty += 1
@@ -143,6 +184,7 @@ export default {
   },
   created () {
     this.getProduct()
+    this.getFavorite()
   },
   mounted () {
     this.carousel = new Carousel(this.$refs.carousel)
@@ -151,6 +193,25 @@ export default {
 </script>
 
 <style lang="scss">
+.cursorPointer.material-icons{
+  cursor: pointer;
+  transition: .3s;
+  top: 10px;
+  right: 22px;
+  background-color: rgb(255, 255, 255, .3);
+  color: #dee2e6;
+  z-index: 2;
+  &:hover{
+    img{
+      transform: scale(1.15);
+    }
+    box-shadow:0 0 8px rgb(128, 209, 214, .2);
+    color: #FF5959;
+  }
+  &.favorite {
+    color: #FF5959;
+  }
+}
 .qtyCounter{
   cursor: pointer;
   &:hover{
