@@ -187,7 +187,7 @@ img{
   object-fit: cover;
 }
 .btn-outline-primary:hover,.choose{
-  background-color: #80D1D6;
+  background-color: #587778;
   color: #ffffff;
 }
 .checkCircle{

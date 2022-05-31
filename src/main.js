@@ -44,7 +44,7 @@ const options = {
   timer: 2500,
   timerProgressBar: true,
   icon: 'success',
-  iconColor: '#80D1D6'
+  iconColor: '#587778'
 }
 app.use(VueSweetalert2, options)
 app.use(router)

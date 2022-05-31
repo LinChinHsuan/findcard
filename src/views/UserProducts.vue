@@ -229,10 +229,10 @@ sup{
   width: auto;
   transition: .7s;
   background-color: transparent;
-  color: #80D1D6;
+  color: #587778;
   &:hover,&:focus,&.active {
     color: #ffffff;
-    box-shadow: inset 0 0 0 3em #80D1D6;
+    box-shadow: inset 0 0 0 3em #587778;
   }
   @media(max-width: 768px){
     flex-grow: 1;

@@ -137,7 +137,7 @@ export default {
     border-radius: 15px;
   }
   .text{
-    background-color: rgba(128, 209, 214, .9);
+    background-color: #587778;
     height: 282px;
     transform: rotateY(-180deg);
   }
@@ -161,7 +161,7 @@ export default {
   &:hover,
   &:focus {
     color: #ffffff;
-    box-shadow: inset 0 0 0 2em #80D1D6;
+    box-shadow: inset 0 0 0 2em #587778;
   }
 }
 </style>

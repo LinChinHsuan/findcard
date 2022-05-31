@@ -234,7 +234,7 @@ img{
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: #80D1D6;
+  background-color: #587778;
 }
 .text-description{
   text-indent: 2em;

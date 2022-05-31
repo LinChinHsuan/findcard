@@ -133,16 +133,16 @@ export default {
     bottom: 0;
     height: 3px;
     width: 0%;
-    background-color: #80D1D6;
+    background-color: #587778;
     transition: width .3s ease;
   }
   &.active,&:hover {
-    color: #80D1D6;
+    color: #587778;
     &::after{
       width: 100%;
     }
     @media(max-width:992px) {
-      background-color: #80D1D6;
+      background-color: #587778;
       color: #ffffff;
       &::after{
         width: 0;

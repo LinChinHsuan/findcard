@@ -6,7 +6,7 @@
           <h5 class="modal-title fw-bold" id="exampleModalLabel">
             {{ coupon.id ? "編輯優惠券" : "新增優惠券"}}
           </h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <div class="mb-3">

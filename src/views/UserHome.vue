@@ -403,7 +403,7 @@ export default {
     object-fit: cover;
   }
   .slogan{
-    background-color: #80D1D6;
+    background-color: #587778;
     top:0;
     @media (max-width: 992px) {
       background-color: transparent;
@@ -427,10 +427,10 @@ export default {
     &:hover,
     &:focus {
       box-shadow: inset 0 0 0 2em #FFFFFF;
-      color: #80D1D6;
+      color: #587778;
     }
     @media (max-width: 992px) {
-      background-color: #80D1D6;
+      background-color: #587778;
       color: #FFFFFF;
     }
   }
@@ -468,7 +468,7 @@ export default {
 .about{
   img{
     width: 90%;
-    box-shadow: 20px 20px #80D1D6;
+    box-shadow: 20px 20px #587778;
     transform: translateY(-20px);
     opacity: 0;
     transition: 1.5s .5s ease-out;
@@ -488,7 +488,7 @@ export default {
     }
     img{
       transform: translateY(0);
-      box-shadow: 20px 20px #80D1D6;
+      box-shadow: 20px 20px #587778;
       opacity: 1;
     }
   }
@@ -511,7 +511,7 @@ export default {
   &:hover,
   &:focus {
     color: #ffffff;
-    box-shadow: inset 0 0 0 2em #80D1D6;
+    box-shadow: inset 0 0 0 2em #587778;
   }
 }
 .carousel{
@@ -542,7 +542,7 @@ export default {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: #80D1D6;
+    background-color: #587778;
   }
 }
 //熱銷商品結束
@@ -581,7 +581,7 @@ export default {
     height: 50px;
   }
   .btn:hover{
-    background-color: #80D1D6;
+    background-color: #587778;
     color: #ffffff;
   }
   .btn span{

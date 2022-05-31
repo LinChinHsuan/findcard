@@ -15,7 +15,7 @@
   &:hover,
   &:focus {
     color: #ffffff;
-    box-shadow: inset 0 0 0 2em #80D1D6;
+    box-shadow: inset 0 0 0 2em #587778;
   }
 }
 </style>

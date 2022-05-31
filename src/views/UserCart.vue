@@ -608,7 +608,7 @@ th,td,.btn{
   }
   :last-child{
     font-size: 1.75rem;
-    color: #80D1D6;
+    color: #587778;
   }
 }
 .inactive{

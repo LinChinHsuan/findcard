@@ -36,7 +36,7 @@ export default {
   &:hover,
   &:focus {
     color: #ffffff;
-    box-shadow: inset 0 0 0 3em #80D1D6;
+    box-shadow: inset 0 0 0 3em #587778;
   }
 }
 </style>

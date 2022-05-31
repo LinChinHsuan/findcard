@@ -70,9 +70,9 @@ export default {
 <style lang="scss" scoped>
 .navbar-light .navbar-nav .nav-link {
   &.active,&:hover {
-    color: #80D1D6;
+    color: #587778;
     @media(max-width:992px) {
-      background-color: #80D1D6;
+      background-color: #587778;
       color: #ffffff;
     }
   }
@@ -85,7 +85,7 @@ export default {
 .material-icons{
   line-height: 40px;
   &.active{
-    color: #80D1D6;
+    color: #587778;
   }
 }
 </style>
