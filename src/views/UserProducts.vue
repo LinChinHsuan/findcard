@@ -132,9 +132,7 @@ export default {
     },
     toggleFavorite (item) {
       const id = item.id
-      const hasFavorite = this.favorite.some((item) => {
-        return item.id === id
-      })
+      const hasFavorite = this.favorite.some((item) => item.id === id)
       if (!hasFavorite) {
         this.favorite.push(item)
         localStorage.setItem('favorite', JSON.stringify(this.favorite))
