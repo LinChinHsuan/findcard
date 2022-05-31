@@ -1,8 +1,8 @@
 <template>
   <div :style="{ 'background-image': info.bgImg }" class="bg-img" :class="{'bg-attachment': info.attachment}">
-    <div class="bg-dark bg-opacity-75 h-100">
-      <h3 class="d-flex justify-content-center pt-5 mb-4">
-        <span class="pb-2 me-2 fs-1 text-white fw-bolder">{{ info.title }}</span>
+    <div class="bg-dark bg-opacity-75 h-100 d-flex flex-column justify-content-center">
+      <h3 class="d-flex justify-content-center mb-4">
+        <span class="me-2 fs-1 text-white fw-bolder">{{ info.title }}</span>
         <span class="fs-3 text-primary align-self-end">/ {{ info.titleEn }}</span>
       </h3>
       <p class="text-white text-center px-3 fs-5">{{ info.text }}</p>

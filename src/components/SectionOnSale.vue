@@ -1,6 +1,6 @@
 <template>
   <h3 class="d-flex justify-content-center mt-5 mb-3">
-    <span class="pb-2 me-2 fs-1 fw-bolder">促銷商品</span>
+    <span class="me-2 fs-1 fw-bolder">促銷商品</span>
     <span class="fs-3 text-primary align-self-end">/ On Sale</span>
   </h3>
   <div class="row g-4 pb-5">

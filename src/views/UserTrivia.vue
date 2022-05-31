@@ -7,7 +7,7 @@
     </div>
     <div class="container py-5" v-else>
       <h3 class="d-flex justify-content-center mb-4">
-        <span class="pb-2 me-2 fs-1 fw-bolder">你知道嗎？</span>
+        <span class="me-2 fs-1 fw-bolder">你知道嗎？</span>
         <span class="fs-3 text-primary align-self-end">/ Do you know?</span>
       </h3>
       <div class="row">

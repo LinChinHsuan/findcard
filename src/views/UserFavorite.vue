@@ -2,7 +2,7 @@
   <div class="container-fliud banner">
     <div class="bg-dark bg-opacity-75 w-100 h-100 d-flex align-items-center">
       <h1 class="w-100 d-flex align-items-center justify-content-center mb-0 mt-5">
-        <span class="pb-2 me-2 fs-1 fw-bolder text-white">關注商品</span>
+        <span class="me-2 fs-1 fw-bolder text-white">關注商品</span>
         <span class="fs-3 text-primary align-self-end">/ Favorite</span>
       </h1>
     </div>

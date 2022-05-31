@@ -23,7 +23,7 @@
     <div class="container py-5">
       <div class="d-none d-md-block">
         <h3 class="d-flex justify-content-center mb-4">
-          <span class="pb-2 me-2 fs-1 fw-bolder">關於找。牌</span>
+          <span class="me-2 fs-1 fw-bolder">關於找。牌</span>
           <span class="fs-3 text-primary align-self-end">/ About Us</span>
         </h3>
         <div class="row about pb-5" ref="about">
@@ -52,7 +52,7 @@
         </div>
       </div>
       <h3 class="d-flex justify-content-center mb-4">
-        <span class="pb-2 me-2 fs-1 fw-bolder">熱銷商品</span>
+        <span class="me-2 fs-1 fw-bolder">熱銷商品</span>
         <span class="fs-3 text-primary align-self-end">/ Hot Sale</span>
       </h3>
       <div class="row hotSale">
@@ -100,7 +100,7 @@
     <SectionBanner :info="SectionCouponBanner" />
     <div class="container pt-5">
       <h3 class="d-flex justify-content-center mb-4">
-        <span class="pb-2 me-2 fs-1 fw-bolder">最新消息</span>
+        <span class="me-2 fs-1 fw-bolder">最新消息</span>
         <span class="fs-3 text-primary align-self-end">/ News</span>
       </h3>
       <div class="row news" ref="news">
@@ -152,7 +152,7 @@
     <SectionBanner :info="SectionTriviaBanner" />
     <div class="container py-5">
       <h3 class="d-flex justify-content-center mb-4">
-        <span class="pb-2 me-2 fs-1 fw-bolder">顧客評價</span>
+        <span class="me-2 fs-1 fw-bolder">顧客評價</span>
         <span class="fs-3 text-primary align-self-end">/ Feedback</span>
       </h3>
       <div class="row feedback" ref="feedback">
@@ -230,7 +230,7 @@
         </div>
       </div>
       <h3 class="d-flex justify-content-center mt-5 mb-4">
-        <span class="pb-2 me-2 fs-1 fw-bolder">常見問題</span>
+        <span class="me-2 fs-1 fw-bolder">常見問題</span>
         <span class="fs-3 text-primary align-self-end">/ FAQ</span>
       </h3>
       <div class="row faq">

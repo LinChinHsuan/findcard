@@ -2,7 +2,7 @@
   <div class="container-fliud banner" v-if="step === 0">
     <div class="bg-dark bg-opacity-75 w-100 h-100 d-flex align-items-center">
       <h1 class="w-100 d-flex align-items-center justify-content-center mb-0 mt-5">
-        <span class="pb-2 me-2 fs-1 fw-bolder text-white">購物車</span>
+        <span class="me-2 fs-1 fw-bolder text-white">購物車</span>
         <span class="fs-3 text-primary align-self-end">/ Cart</span>
       </h1>
     </div>
@@ -12,15 +12,15 @@
       <div class="d-none d-lg-block col-lg-10 col-xl-8 mx-auto">
         <div class="d-flex mt-5 mb-3" v-if="step !== 0">
           <h1 class="flex-grow-1 d-flex align-items-end justify-content-center mb-0"  :class="{ 'active': step === 1, 'inactive': step !== 1 }">
-            <span class="pb-2 me-2 fw-bolder">1. 填寫資訊</span>
+            <span class="me-2 fw-bolder">1. 填寫資訊</span>
             <span>/ Fill In</span>
           </h1>
           <h1 class="flex-grow-1 d-flex align-items-end justify-content-center mb-0" :class="{ 'active': step === 2, 'inactive': step !== 2 }">
-            <span class="pb-2 me-2 fw-bolder">2. 確認訂單</span>
+            <span class="me-2 fw-bolder">2. 確認訂單</span>
             <span>/ Confirm</span>
           </h1>
           <h1 class="flex-grow-1 d-flex align-items-end justify-content-center mb-0" :class="{ 'active': step === 3, 'inactive': step !== 3 }">
-            <span class="pb-2 me-2 fw-bolder">3. 完成訂單</span>
+            <span class="me-2 fw-bolder">3. 完成訂單</span>
             <span>/ Checkout</span>
           </h1>
         </div>
@@ -28,15 +28,15 @@
       <div class="d-lg-none col-12">
         <div class="d-flex justify-content-center mt-5 mb-3" v-if="step !== 0">
           <h1 class="d-flex align-items-center justify-content-center mb-0"  :class="{ 'active': step === 1, 'd-none': step !== 1 }">
-            <span class="pb-2 me-2 fw-bolder">1. 填寫資訊</span>
+            <span class="me-2 fw-bolder">1. 填寫資訊</span>
             <span class="align-self-end">/ Fill In</span>
           </h1>
           <h1 class="d-flex align-items-center justify-content-center mb-0" :class="{ 'active': step === 2, 'd-none': step !== 2 }">
-            <span class="pb-2 me-2 fw-bolder">2. 確認訂單</span>
+            <span class="me-2 fw-bolder">2. 確認訂單</span>
             <span class="align-self-end">/ Confirm</span>
           </h1>
           <h1 class="d-flex align-items-center justify-content-center mb-0" :class="{ 'active': step === 3, 'd-none': step !== 3 }">
-            <span class="pb-2 me-2 fw-bolder">3. 完成訂單</span>
+            <span class="me-2 fw-bolder">3. 完成訂單</span>
             <span class="align-self-end">/ Checkout</span>
           </h1>
         </div>

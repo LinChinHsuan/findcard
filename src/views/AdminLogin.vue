@@ -4,7 +4,7 @@
       <div class="row h-100 flex-nowrap flex-column justify-content-center">
         <div class="col-12">
           <h1 class="d-flex align-items-center justify-content-center mt-3 mb-4">
-            <span class="pb-2 me-2 fs-1 fw-bolder">管理員登入</span>
+            <span class="me-2 fs-1 fw-bolder">管理員登入</span>
             <span class="fs-4 text-primary align-self-end">/ Login</span>
           </h1>
         </div>

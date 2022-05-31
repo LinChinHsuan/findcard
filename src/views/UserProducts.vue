@@ -7,7 +7,7 @@
   <div class="container-fliud productBanner">
     <div class="bg-dark bg-opacity-50 w-100 h-100 d-flex align-items-center">
       <h1 class="w-100 d-flex align-items-center justify-content-center mb-0 mt-5">
-        <span class="pb-2 me-2 fs-1 fw-bolder text-white">所有商品</span>
+        <span class="me-2 fs-1 fw-bolder text-white">所有商品</span>
         <span class="fs-3 text-primary align-self-end">/ All Product</span>
       </h1>
     </div>
