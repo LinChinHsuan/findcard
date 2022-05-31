@@ -1,8 +1,8 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light p-0 bg-white position-fixed top-0 w-100">
     <a class="navbar-brand" href="#">
-      <img src="../../public/images/logo.png" alt="logo" height="40" class="px-2">
-      <img src="../../public/images/findcard.png" alt="找。牌" height="24">
+      <img src="../assets/images/logo.png" alt="logo" height="40" class="px-2">
+      <img src="../assets/images/findcard.png" alt="找。牌" height="24">
     </a>
     <button class="navbar-toggler border-0 me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" ref="navbarBtn" @click="isCollapse = !isCollapse">
