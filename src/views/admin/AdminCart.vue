@@ -102,110 +102,110 @@
         </div>
       </div>
     </div>
-    <div class="my-5 row justify-content-center">
-      <template v-if="step === 1">
-        <VForm class="col-lg-6" v-slot="{ errors }" @submit="createOrder">
-          <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <VField id="email" name="email" type="email" class="form-control" :class="{ 'is-invalid': errors['email'] }"
-              placeholder="請輸入 Email" rules="email|required" v-model="form.user.email"></VField>
-            <ErrorMessage name="email" class="invalid-feedback"></ErrorMessage>
-          </div>
-          <div class="mb-3">
-            <label for="name" class="form-label">收件人姓名</label>
-            <VField id="name" name="姓名" type="text" class="form-control" :class="{ 'is-invalid': errors['姓名'] }"
-              placeholder="請輸入姓名" rules="required" v-model="form.user.name"></VField>
-            <ErrorMessage name="姓名" class="invalid-feedback"></ErrorMessage>
-          </div>
-          <div class="mb-3">
-            <label for="tel" class="form-label">收件人電話</label>
-            <VField id="tel" name="電話" type="tel" class="form-control" :class="{ 'is-invalid': errors['電話'] }"
-              placeholder="請輸入電話" rules="required" v-model="form.user.tel"></VField>
-            <ErrorMessage name="電話" class="invalid-feedback"></ErrorMessage>
-          </div>
-          <div class="mb-3">
-            <label for="address" class="form-label">收件人地址</label>
-            <VField id="address" name="地址" type="text" class="form-control" :class="{ 'is-invalid': errors['地址'] }"
-              placeholder="請輸入地址" rules="required" v-model="form.user.address"></VField>
-            <ErrorMessage name="地址" class="invalid-feedback"></ErrorMessage>
-          </div>
-          <div class="mb-3">
-            <label for="message" class="form-label">留言</label>
-            <textarea name="" id="message" class="form-control" cols="30" rows="10" v-model="form.message"></textarea>
-          </div>
-          <div class="text-end">
-            <button type="submit" class="btn btn-primary btn-lg fw-bold text-white" @submit="createOrder">送出訂單</button>
-          </div>
-        </VForm>
-      </template>
-      <template v-else-if="step === 2">
-        <form class="col-lg-6">
-          <table class="table align-middle">
-            <thead>
-              <th>品名</th>
-              <th>數量</th>
-              <th>單價</th>
-            </thead>
-            <tbody>
-              <tr v-for="item in order.products" :key="item.id">
-                <td>{{ item.product.title }}</td>
-                <td>{{ item.qty }} / {{ item.product.unit }}</td>
-                <td class="text-end">{{ item.total }}</td>
-              </tr>
-            </tbody>
-            <tfoot>
-              <tr>
-                <td colspan="2" class="text-end">總計</td>
-                <td class="text-end">{{ order.total }}</td>
-              </tr>
-            </tfoot>
-          </table>
-          <table class="table">
-            <tbody>
-              <tr>
-                <th width="100">Email</th>
-                <td>{{ order.user.email }}</td>
-              </tr>
-              <tr>
-                <th>姓名</th>
-                <td>{{ order.user.name }}</td>
-              </tr>
-              <tr>
-                <th>收件人電話</th>
-                <td>{{ order.user.tel }}</td>
-              </tr>
-              <tr>
-                <th>收件人地址</th>
-                <td>{{ order.user.address }}</td>
-              </tr>
-              <tr>
-                <th>付款狀態</th>
-                <td>
-                  <span v-if="order.is_paid" class="text-success">付款完成</span>
-                  <span v-else class="text-muted">尚未付款</span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="d-flex mt-4">
-            <button class="btn btn-primary btn-lg fw-bold text-white" type="button" @click="step = 1">重新購物</button>
-            <button class="btn btn-primary btn-lg fw-bold text-white ms-auto" type="button" @click="payOrder">確認付款去</button>
-          </div>
-        </form>
-      </template>
-      <template v-else>
-        <div class="col-md-10 col-xl-8">
-          <div class="bg-white d-flex flex-column text-center p-5">
-            <span class="material-icons display-2 text-primary mb-3">check_circle</span>
-            <p class="fs-2 fw-bold mb-5">付款成功</p>
-            <p class="mb-0">感謝您的訂購</p>
-            <p class="mb-0">商品預計於三個工作天內寄送（不含週休及國定例假日）</p>
-            <p class="mb-3">再請留意簡訊通知及配送人員的電話 </p>
-            <button class="btn btn-primary btn-lg align-self-center fw-bold text-white" type="button" @click="step = 1">重新購物</button>
-          </div>
+  </div>
+  <div class="my-5 row justify-content-center">
+    <template v-if="step === 1">
+      <VForm class="col-lg-6" v-slot="{ errors }" @submit="createOrder">
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <VField id="email" name="email" type="email" class="form-control" :class="{ 'is-invalid': errors['email'] }"
+            placeholder="請輸入 Email" rules="email|required" v-model="form.user.email"></VField>
+          <ErrorMessage name="email" class="invalid-feedback"></ErrorMessage>
         </div>
-      </template>
-    </div>
+        <div class="mb-3">
+          <label for="name" class="form-label">收件人姓名</label>
+          <VField id="name" name="姓名" type="text" class="form-control" :class="{ 'is-invalid': errors['姓名'] }"
+            placeholder="請輸入姓名" rules="required" v-model="form.user.name"></VField>
+          <ErrorMessage name="姓名" class="invalid-feedback"></ErrorMessage>
+        </div>
+        <div class="mb-3">
+          <label for="tel" class="form-label">收件人電話</label>
+          <VField id="tel" name="電話" type="tel" class="form-control" :class="{ 'is-invalid': errors['電話'] }"
+            placeholder="請輸入電話" rules="required" v-model="form.user.tel"></VField>
+          <ErrorMessage name="電話" class="invalid-feedback"></ErrorMessage>
+        </div>
+        <div class="mb-3">
+          <label for="address" class="form-label">收件人地址</label>
+          <VField id="address" name="地址" type="text" class="form-control" :class="{ 'is-invalid': errors['地址'] }"
+            placeholder="請輸入地址" rules="required" v-model="form.user.address"></VField>
+          <ErrorMessage name="地址" class="invalid-feedback"></ErrorMessage>
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">留言</label>
+          <textarea name="" id="message" class="form-control" cols="30" rows="10" v-model="form.message"></textarea>
+        </div>
+        <div class="text-end">
+          <button type="submit" class="btn btn-primary btn-lg fw-bold text-white" @submit="createOrder">送出訂單</button>
+        </div>
+      </VForm>
+    </template>
+    <template v-else-if="step === 2">
+      <form class="col-lg-6">
+        <table class="table align-middle">
+          <thead>
+            <th>品名</th>
+            <th>數量</th>
+            <th>單價</th>
+          </thead>
+          <tbody>
+            <tr v-for="item in order.products" :key="item.id">
+              <td>{{ item.product.title }}</td>
+              <td>{{ item.qty }} / {{ item.product.unit }}</td>
+              <td class="text-end">{{ item.total }}</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="2" class="text-end">總計</td>
+              <td class="text-end">{{ order.total }}</td>
+            </tr>
+          </tfoot>
+        </table>
+        <table class="table">
+          <tbody>
+            <tr>
+              <th width="100">Email</th>
+              <td>{{ order.user.email }}</td>
+            </tr>
+            <tr>
+              <th>姓名</th>
+              <td>{{ order.user.name }}</td>
+            </tr>
+            <tr>
+              <th>收件人電話</th>
+              <td>{{ order.user.tel }}</td>
+            </tr>
+            <tr>
+              <th>收件人地址</th>
+              <td>{{ order.user.address }}</td>
+            </tr>
+            <tr>
+              <th>付款狀態</th>
+              <td>
+                <span v-if="order.is_paid" class="text-success">付款完成</span>
+                <span v-else class="text-muted">尚未付款</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="d-flex mt-4">
+          <button class="btn btn-primary btn-lg fw-bold text-white" type="button" @click="step = 1">重新購物</button>
+          <button class="btn btn-primary btn-lg fw-bold text-white ms-auto" type="button" @click="payOrder">確認付款去</button>
+        </div>
+      </form>
+    </template>
+    <template v-else>
+      <div class="col-md-10 col-xl-8">
+        <div class="bg-white d-flex flex-column text-center p-5">
+          <span class="material-icons display-2 text-primary mb-3">check_circle</span>
+          <p class="fs-2 fw-bold mb-5">付款成功</p>
+          <p class="mb-0">感謝您的訂購</p>
+          <p class="mb-0">商品預計於三個工作天內寄送（不含週休及國定例假日）</p>
+          <p class="mb-3">再請留意簡訊通知及配送人員的電話 </p>
+          <button class="btn btn-primary btn-lg align-self-center fw-bold text-white" type="button" @click="step = 1">重新購物</button>
+        </div>
+      </div>
+    </template>
   </div>
 </template>
 

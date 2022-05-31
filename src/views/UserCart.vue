@@ -7,7 +7,7 @@
       </h1>
     </div>
   </div>
-  <div class="container-fliud bg-light pt-5" v-else>
+  <div class="container-fluid bg-light pt-5" v-else>
     <div class="row">
       <div class="d-none d-lg-block col-lg-10 col-xl-8 mx-auto">
         <div class="d-flex mt-5 mb-3" v-if="step !== 0">
@@ -25,7 +25,7 @@
           </h1>
         </div>
       </div>
-      <div class="d-lg-none col-md-8 mx-auto">
+      <div class="d-lg-none col-12">
         <div class="d-flex justify-content-center mt-5 mb-3" v-if="step !== 0">
           <h1 class="d-flex align-items-center justify-content-center mb-0"  :class="{ 'active': step === 1, 'd-none': step !== 1 }">
             <span class="pb-2 me-2 fw-bolder">1. 填寫資訊</span>
@@ -54,7 +54,7 @@
         <p class="fs-5 fw-bold mb-5">目前購物車沒有任何商品</p>
         <router-link to="/products" type="button" class="btn btn-primary fs-5 fw-bold text-white mt-3 px-4 py-3">瀏覽商品</router-link>
     </div>
-    <div class="py-5" v-else>
+    <div class="py-5 vh-remain" v-else>
       <template v-if="step === 0">
         <div class="container d-none d-md-block">
           <div class="row">
@@ -193,7 +193,7 @@
       </template>
       <template v-if="step !== 0">
         <div class="container">
-          <div class="row gx-5">
+          <div class="row">
             <template v-if="step === 1">
               <div class="d-none d-lg-block col-6">
                 <h3 class="fs-5 text-center border-bottom pb-3">清單明細</h3>
@@ -568,6 +568,12 @@ export default {
 }
 .vh-remain{
   min-height: calc(100vh - 300px);
+  @media (max-width: 768px) {
+    min-height: calc(100vh - 250px);
+  }
+  @media (max-width: 576px) {
+    min-height: calc(100vh - 200px);
+  }
 }
 .material-icons.cart{
   font-size: 64px;

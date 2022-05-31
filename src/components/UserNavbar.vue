@@ -74,8 +74,7 @@ export default {
   watch: {
     $route (to) {
       if (document.body.offsetWidth < 992) {
-        const classList = [...this.$refs.navbarBtn.classList]
-        if (classList.indexOf('collapsed') === -1) {
+        if (this.isCollapse) {
           this.$refs.navbarBtn.click()
         }
       }
