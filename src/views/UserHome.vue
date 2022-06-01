@@ -5,7 +5,7 @@
         <div class="h-100 d-flex flex-column justify-content-center text-white">
           <h1 class="text-center mt-5 mb-4">
             <span class="d-none">找。牌</span>
-            <img src="images/findcardWhite.png" alt="找。牌" width="200">
+            <img src="../assets/images/findcardWhite.png" alt="找。牌" width="200">
           </h1>
           <p class="fs-4 text-center mx-auto mb-0">「魔術師為觀眾找牌，我們替您找牌。」</p>
           <router-link to="products" type="button" class="btn btn-outline-light btn-lg fw-bold border-2 px-4 mt-5 align-self-center">瀏覽商品</router-link>
@@ -15,7 +15,7 @@
         <img src="https://storage.googleapis.com/vue-course-api.appspot.com/vuefindcard/1650445651410.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=OX5DseHqXL0OoVS0PqUmLQ9cBERn3oAVQwpaYwGmoPdHe8U2pzUY1GJjxyszbsUSeTslQC1Buk2FFSTxin2rGzFu8kO7G0fqcaZOHh8hhQSwmgl22wMgjjQE5MZXXPl6FQnePBNUwC4fi69QrgIrcQU3xwTXgSKkVah407lGCVzBNqmiHP3juPKI5ojhZpagyhGXGwjwNqklyYLtQBqrFYZ9qCx5uu64R2wlYLH2rJxrol4AQVPqpalZKDaWcPCkjZgiJrcZl9erzy2eujtdCRznPj4wA95w3HJYiq6pLWb%2B%2FtJzLClH%2BfM6hHawZmN7wnhJXne5pYkdOBFL1kcl7g%3D%3D" alt="找。牌" class="w-100 h-100 img-fit">
       </div>
       <div class="userScroll d-flex justify-content-center" v-if="height < 50">
-        <img src="images/down-arrow.png" alt="arrow-down">
+        <img src="../assets/images/down-arrow.png" alt="arrow-down">
       </div>
     </div>
   </div>
