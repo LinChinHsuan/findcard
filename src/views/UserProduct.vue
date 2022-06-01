@@ -1,4 +1,9 @@
 <template>
+  <div class="bg-light d-flex justify-content-center align-items-center vh-100" v-if="isLoading">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
   <div class="bg-light pt-5">
     <div class="container pt-4">
       <nav class="d-none d-lg-block" aria-label="breadcrumb">
@@ -64,7 +69,7 @@
                 <span class="material-icons text-primary p-2 qtyCounter" @click="qtyAdjust(1)">add</span>
               </div>
               <button class="btn btn-primary fw-bold text-white w-50" type="button" @click="addCart(product.id)">
-                <div class="spinner-border text-white spinner-border-sm" role="status" v-if="isLoading">
+                <div class="spinner-border text-white spinner-border-sm" role="status" v-if="addCartLoading">
                   <span class="visually-hidden">Loading...</span>
                 </div>
                 加入購物車
@@ -95,6 +100,7 @@ export default {
       favoriteIds: [],
       qty: 1,
       isLoading: false,
+      addCartLoading: false,
       SectionCouponBanner: {
         bgImg: 'url(https://storage.googleapis.com/vue-course-api.appspot.com/vuefindcard/1650444886897.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=AKertjf%2FwFKlifZWfQaubvQuXyW6h0WPSlanbt0WKYDgAEN%2Bemhi8JNkt0k3s3rhVYn29eVKkMfUYWGSZBb%2FLFjSJ8Y4sU3vMJxtfRcP5nHsBp%2FRhxrPsus4Ivx0t9YMQuLSmpwzteuwAMJGpsqDUBXVP9jEcCnEV%2FXibgxOAJxRgK9xYwOcMPujFscM8VLBeSq%2Fxl3vl5eUqZVMER7x577FJzmEMMe%2Bq%2FNMqJgnEEkDRDwkuAL%2B7JIFMmVG%2Bu%2Bsipo6U1X%2F6iBon5trL8HgjcF8MhFMkh%2Bj5rlcBK7SVns76nC8XfbQ6Apu%2FGlM9gSyXuFqgLok%2BqWdRiqf7RW9BA%3D%3D)',
         title: '周年慶優惠券',
@@ -117,9 +123,11 @@ export default {
   },
   methods: {
     getProduct () {
+      this.isLoading = true
       const id = this.$route.params.id
       const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/product/${id}`
       this.$http.get(api).then((res) => {
+        this.isLoading = false
         if (res.data.success) {
           this.product = res.data.product
         }
@@ -171,12 +179,12 @@ export default {
       }
     },
     addCart (id) {
-      this.isLoading = true
+      this.addCartLoading = true
       const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/cart`
       this.$http.post(api, { data: { product_id: id, qty: this.qty } }).then(() => {
         emitter.emit('update-cart')
         this.$swal('商品已加入購物車')
-        this.isLoading = false
+        this.addCartLoading = false
       })
     }
   },
