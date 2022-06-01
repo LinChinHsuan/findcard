@@ -10,7 +10,7 @@
   <div class="container-fluid bg-light pt-5" v-else>
     <div class="row">
       <div class="d-none d-lg-block col-lg-10 col-xl-8 mx-auto">
-        <div class="d-flex mt-5 mb-3" v-if="step !== 0">
+        <div class="d-flex mt-5" v-if="step !== 0">
           <h1 class="flex-grow-1 d-flex align-items-end justify-content-center mb-0"  :class="{ 'active': step === 1, 'inactive': step !== 1 }">
             <span class="me-2 fw-bolder">1. 填寫資訊</span>
             <span>/ Fill In</span>
@@ -26,7 +26,7 @@
         </div>
       </div>
       <div class="d-lg-none col-12">
-        <div class="d-flex justify-content-center mt-5 mb-3" v-if="step !== 0">
+        <div class="d-flex justify-content-center mt-5" v-if="step !== 0">
           <h1 class="d-flex align-items-center justify-content-center mb-0"  :class="{ 'active': step === 1, 'd-none': step !== 1 }">
             <span class="me-2 fw-bolder">1. 填寫資訊</span>
             <span class="align-self-end">/ Fill In</span>
@@ -54,7 +54,7 @@
         <p class="fs-5 fw-bold mb-5">目前購物車沒有任何商品</p>
         <router-link to="/products" type="button" class="btn btn-primary fs-5 fw-bold text-white mt-3 px-4 py-3">瀏覽商品</router-link>
     </div>
-    <div class="py-5 vh-remain" v-else>
+    <div class="py-sm-5 vh-remain" v-else>
       <template v-if="step === 0">
         <div class="container d-none d-md-block">
           <div class="row">
@@ -127,7 +127,7 @@
             </div>
           </div>
         </div>
-        <div class="d-md-none px-3">
+        <div class="d-md-none px-3 py-5 py-sm-0">
           <h3 class="fs-5 text-center border-bottom pb-3">購物清單</h3>
           <table class="table table-borderless align-middle mt-3">
             <tr>
@@ -234,7 +234,7 @@
                   </tr>
                 </table>
               </div>
-              <div class="col-lg-6">
+              <div class="col-lg-6 py-4 py-sm-0">
                 <h3 class="fs-5 text-center border-bottom pb-3">顧客資訊</h3>
                 <VForm class="mt-3" v-slot="{ errors }" @submit="createOrder">
                   <div class="form-floating mb-3">
@@ -278,7 +278,7 @@
               </div>
             </template>
             <template v-if="step === 2">
-              <div class="col-lg-8 col-xl-6 mx-auto">
+              <div class="col-lg-8 col-xl-6 mx-auto py-4 py-sm-0">
                 <h3 class="fs-5 text-center border-bottom pb-3">訂單資訊</h3>
                 <div class="accordion my-3" id="accordionExample">
                   <div class="accordion-item rounded-0">
@@ -354,10 +354,10 @@
               </div>
             </template>
             <template v-if="step === 3">
-              <div class="col-md-10 col-xl-8 mx-auto">
-                <div class="bg-white d-flex flex-column text-center p-5 mt-5">
+              <div class="col-md-10 col-xl-8 mx-auto py-4 py-sm-0">
+                <div class="bg-white d-flex flex-column text-center p-4 p-sm-5">
                   <span class="material-icons checkCircle text-primary mb-3">check_circle</span>
-                  <p class="fs-2 fw-bold mb-5">付款成功</p>
+                  <p class="fs-2 fw-bold mb-4 mb-sm-5">付款成功</p>
                   <p class="mb-0">感謝您的訂購</p>
                   <p class="mb-0">商品預計於三個工作天內寄送（不含週休及國定例假日）</p>
                   <p class="mb-3">再請留意簡訊通知及配送人員的電話 </p>
@@ -569,10 +569,13 @@ export default {
 .vh-remain{
   min-height: calc(100vh - 300px);
   @media (max-width: 768px) {
-    min-height: calc(100vh - 250px);
+    min-height: calc(100vh - 330px);
   }
   @media (max-width: 576px) {
-    min-height: calc(100vh - 200px);
+    min-height: calc(100vh - 280px);
+  }
+  @media (max-width: 418px) {
+    min-height: calc(100vh - 304px);
   }
 }
 .material-icons.cart{
@@ -611,10 +614,16 @@ th,td,.btn{
 .active{
   :first-child{
     font-size: 2.5rem;
+    @media(max-width: 424px) {
+      font-size: 2rem;
+    }
   }
   :last-child{
     font-size: 1.75rem;
     color: #587778;
+    @media(max-width: 424px) {
+      font-size: 1.5rem;
+    }
   }
 }
 .inactive{
