@@ -10,7 +10,7 @@
   <div class="bg-light">
     <div class="container">
       <div class="d-flex justify-content-center">
-        <div class="py-5">
+        <div class="pt-5">
           <div class="h-100 d-flex flex-column align-items-center">
             <p class="mb-0 fs-5"> 歡慶本店開幕兩週年</p>
             <p class="mb-4 fs-5">歡迎您參與「週年慶抽獎」活動
