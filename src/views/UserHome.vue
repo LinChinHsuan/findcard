@@ -348,15 +348,15 @@ export default {
   },
   watch: {
     height () {
-      if (this.height >= 200) {
+      if (this.height >= 220) {
         this.$refs.about.classList.add('animation')
       }
-      if (this.height >= 1900 && document.body.clientWidth >= 768) {
+      if (this.height >= 1940 && document.body.clientWidth >= 768) {
         this.$refs.news.classList.add('animation')
       } else if (this.height >= 1500 && document.body.clientWidth < 768) {
         this.$refs.news.classList.add('animation')
       }
-      if (this.height >= 3150) {
+      if (this.height >= 3100) {
         this.$refs.feedback.classList.add('animation')
       }
     }
