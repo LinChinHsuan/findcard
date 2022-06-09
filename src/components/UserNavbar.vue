@@ -158,7 +158,7 @@ export default {
   }
   .material-icons{
     &.active{
-      color: #80D1D6;
+      color: #587778;
     }
   }
 }
