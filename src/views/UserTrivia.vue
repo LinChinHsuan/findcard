@@ -1,6 +1,6 @@
 <template>
   <div class="bg-light">
-    <div class="d-flex justify-content-center align-items-center vh-100" v-if="isloading">
+    <div class="d-flex justify-content-center align-items-center vh-100" v-if="isLoading">
       <div class="spinner-border text-primary" role="status">
         <span class="visually-hidden">Loading...</span>
       </div>
@@ -39,7 +39,7 @@ export default {
       trivia: [],
       nowTrivia: {},
       nowTriviaIndex: 0,
-      isloading: false,
+      isLoading: false,
       SectionCouponBanner: {
         bgImg: 'url(https://storage.googleapis.com/vue-course-api.appspot.com/vuefindcard/1650445294774.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=grJuMaRwCsP03enc90wmLU%2B7km1lwkR5DjZKbxXhREAbamECWC2DXG%2B4ePigCva9WFcwbBMYZ0%2Bd2twdoHuQ8JXasMZrAWqXm4jm9t%2Bhno2L2Iwzn%2B9n1lzFSbSomV07j5elBAe5L3aHqvNVgJ5j1rkqHFJtCtJVjJuoaLpyLAdQ8Y052MLx40FIdCTDk5x5oPrPFqPKehojpoigbedSVhZF%2BPgCMRUhop9m3cwM%2FdOFWbTQqMf9fH77AVi%2FrRHED2imiI%2F3A76YXLChamA%2B9MARHUuk1YjS%2BkuEnOlgKcmi6RNLSDpKbZqn9TqoNS01P7j2dXK3FlFLs9%2FsNk8SRA%3D%3D)',
         title: '冷知識大考驗',
@@ -55,7 +55,7 @@ export default {
   },
   methods: {
     getTrivia (page = 1) {
-      this.isloading = true
+      this.isLoading = true
       const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/articles?page=${page}`
       this.$http.get(api).then((res) => {
         if (res.data.success) {
@@ -67,7 +67,7 @@ export default {
           })
         }
         this.nowTrivia = this.trivia[0]
-        this.isloading = false
+        this.isLoading = false
       })
     },
     nextTrivia () {

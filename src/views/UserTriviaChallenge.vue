@@ -1,6 +1,6 @@
 <template>
   <div class="bg-light">
-    <div class="d-flex justify-content-center align-items-center vh-100" v-if="isloading">
+    <div class="d-flex justify-content-center align-items-center vh-100" v-if="isLoading">
       <div class="spinner-border text-primary" role="status">
         <span class="visually-hidden">Loading...</span>
       </div>
@@ -95,7 +95,7 @@ export default {
         couponCode: '',
         score: 0
       },
-      isloading: false,
+      isLoading: false,
       SectionCouponBanner: {
         bgImg: 'url(https://storage.googleapis.com/vue-course-api.appspot.com/vuefindcard/1650444886897.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=AKertjf%2FwFKlifZWfQaubvQuXyW6h0WPSlanbt0WKYDgAEN%2Bemhi8JNkt0k3s3rhVYn29eVKkMfUYWGSZBb%2FLFjSJ8Y4sU3vMJxtfRcP5nHsBp%2FRhxrPsus4Ivx0t9YMQuLSmpwzteuwAMJGpsqDUBXVP9jEcCnEV%2FXibgxOAJxRgK9xYwOcMPujFscM8VLBeSq%2Fxl3vl5eUqZVMER7x577FJzmEMMe%2Bq%2FNMqJgnEEkDRDwkuAL%2B7JIFMmVG%2Bu%2Bsipo6U1X%2F6iBon5trL8HgjcF8MhFMkh%2Bj5rlcBK7SVns76nC8XfbQ6Apu%2FGlM9gSyXuFqgLok%2BqWdRiqf7RW9BA%3D%3D)',
         title: '周年慶優惠券',
@@ -116,7 +116,7 @@ export default {
   },
   methods: {
     getQuestions (page = 1) {
-      this.isloading = true
+      this.isLoading = true
       const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/articles?page=${page}`
       this.$http.get(api).then((res) => {
         if (res.data.success) {
@@ -129,7 +129,7 @@ export default {
           })
         }
         this.nowQuestion = this.questions[0]
-        this.isloading = false
+        this.isLoading = false
       })
     },
     answer (option) {

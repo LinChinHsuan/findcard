@@ -126,9 +126,7 @@ export default {
       this.$router.push(`/product/${id}`)
     },
     isFavorite (id) {
-      return this.favoriteIds.some(function (item) {
-        return item === id
-      })
+      return this.favoriteIds.some((item) => item === id)
     },
     toggleFavorite (item) {
       const id = item.id

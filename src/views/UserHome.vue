@@ -81,7 +81,7 @@
             </p>
             <div class="d-flex">
               <button type="button" class="btn btn-outline-primary border-2 fw-bold w-50 me-2" @click.stop="addCart('-N-HfxO4rb_sLZJ3Eg5o')">
-                <div class="spinner-border text-white spinner-border-sm" role="status" v-if="isloading">
+                <div class="spinner-border text-white spinner-border-sm" role="status" v-if="isLoading">
                   <span class="visually-hidden">Loading...</span>
                 </div>
                 加到購物車
@@ -319,7 +319,7 @@ export default {
   data () {
     return {
       carousel: {},
-      isloading: false,
+      isLoading: false,
       buyNowLoading: false,
       SectionCouponBanner: {
         bgImg: 'url(https://storage.googleapis.com/vue-course-api.appspot.com/vuefindcard/1650381522049.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=D32yCABvgJflufQeWm08X4iYr7HyUnA10nJAT1gJ7w7kVmPMFsizdyloy3RZQezUSXikrngiIIeGfalSz01f1bDyYH8GwhrVuLE%2Ba8E4xtZmfJ9MZUuVs9nujeeRqHn0FNBjU6WErkbIF52MW6Z3YcjyXG2wz0TEC7SH%2FssRuxi%2FAspMfVI%2BB2lPhhxdlrZ0HlDztO1X3Q78iAbKmW5%2FV68hzUSucyQuiJVtBoZpoBwsXxirTp0oYBzRuY3A40dg9ixO%2B4zJJd3A2%2FMjoz7L2nQiWH9MjEMoWWJ2rEWe%2BYySWTN6m2udHqMPMx91X%2BNN8wO9wTC%2Bhg8VeDTWn0ifQQ%3D%3D)',
@@ -366,12 +366,12 @@ export default {
       this.height = document.body.scrollTop || document.documentElement.scrollTop
     },
     addCart (id) {
-      this.isloading = true
+      this.isLoading = true
       const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/cart`
       this.$http.post(api, { data: { product_id: id, qty: 1 } }).then(() => {
         this.$swal('商品已加入購物車')
         emitter.emit('update-cart')
-        this.isloading = false
+        this.isLoading = false
       })
     },
     buyNow (id) {
