@@ -12,7 +12,7 @@
       <div class="d-flex flex-column justify-content-center align-items-center text-secondary vh-remain">
         <span class="material-icons mb-3">production_quantity_limits</span>
         <p class="fs-5 fw-bold mb-5">目前沒有收藏任何商品</p>
-        <router-link to="products" type="button" class="btn btn-primary fs-5 fw-bold text-white mt-3 px-4 py-3">瀏覽商品</router-link>
+        <RouterLink to="products" type="button" class="btn btn-primary fs-5 fw-bold text-white mt-3 px-4 py-3">瀏覽商品</RouterLink>
       </div>
     </div>
     <div class="container pt-5">

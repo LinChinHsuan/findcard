@@ -8,7 +8,7 @@
             <img src="../assets/images/findcardWhite.png" alt="找。牌" width="200">
           </h1>
           <p class="fs-4 text-center mx-auto mb-0">「魔術師為觀眾找牌，我們替您找牌。」</p>
-          <router-link to="products" type="button" class="btn btn-outline-light btn-lg fw-bold border-2 px-4 mt-5 align-self-center">瀏覽商品</router-link>
+          <RouterLink to="products" type="button" class="btn btn-outline-light btn-lg fw-bold border-2 px-4 mt-5 align-self-center">瀏覽商品</RouterLink>
         </div>
       </div>
       <div class="col-lg-6 ms-auto h-100">

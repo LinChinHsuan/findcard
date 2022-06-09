@@ -39,8 +39,8 @@
                 <p class="fs-5 mb-0">恭喜獲得周年慶{{ choose.title }}</p>
                 <p class="fs-5 mb-0">折扣碼: {{ choose.code }}</p>
                 <p class="fs-5 mb-3">已可在結帳頁使用</p>
-                <router-link to="/products" class="btn btn-outline-primary btn-lg border-2 fw-bold me-3" type="button">瀏覽商品</router-link>
-                <router-link to="/cart" class="btn btn-primary btn-lg border-2 fw-bold text-white" type="button">立刻使用</router-link>
+                <RouterLink to="/products" class="btn btn-outline-primary btn-lg border-2 fw-bold me-3" type="button">瀏覽商品</RouterLink>
+                <RouterLink to="/cart" class="btn btn-primary btn-lg border-2 fw-bold text-white" type="button">立刻使用</RouterLink>
               </template>
             </div>
           </div>

@@ -67,7 +67,7 @@
               <p class="mb-0">恭喜獲得冷知識大考驗{{ coupon.percent }}優惠券</p>
               <p class="mb-0">折扣碼: <span class="fw-bold">{{ coupon.couponCode }}</span></p>
               <p class="mb-3">已可在結帳頁使用</p>
-              <router-link to="/cart" class="btn btn-primary btn-lg border-2 fw-bold text-white" type="button">立刻使用</router-link>
+              <RouterLink to="/cart" class="btn btn-primary btn-lg border-2 fw-bold text-white" type="button">立刻使用</RouterLink>
             </div>
           </div>
         </div>

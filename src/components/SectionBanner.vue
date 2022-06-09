@@ -7,9 +7,9 @@
       </h3>
       <p class="text-white text-center px-3 fs-5">{{ info.text }}</p>
       <div class="d-flex">
-        <router-link :to="info.btnPath" type="button" class="btn btn-outline-light btn-lg border-2 text-white fw-bold px-4 mt-3 mx-auto">
+        <RouterLink :to="info.btnPath" type="button" class="btn btn-outline-light btn-lg border-2 text-white fw-bold px-4 mt-3 mx-auto">
           {{ info.btnText }}
-        </router-link>
+        </RouterLink>
       </div>
     </div>
   </div>

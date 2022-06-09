@@ -11,48 +11,48 @@
     <div class="collapse navbar-collapse pt-2 pt-lg-0" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <router-link to="/" class="nav-link fw-bold px-4 px-lg-3 py-3" :class="{ 'active':  status === 'home' }">首頁</router-link>
+          <RouterLink to="/" class="nav-link fw-bold px-4 px-lg-3 py-3" :class="{ 'active':  status === 'home' }">首頁</RouterLink>
         </li>
          <li class="nav-item">
-          <router-link to="/products" class="nav-link fw-bold px-4 px-lg-3 py-3" :class="{ 'active':  status === 'products' }">產品列表</router-link>
+          <RouterLink to="/products" class="nav-link fw-bold px-4 px-lg-3 py-3" :class="{ 'active':  status === 'products' }">產品列表</RouterLink>
         </li>
         <li class="nav-item">
-          <router-link to="/coupon" class="nav-link fw-bold px-4 px-lg-3 py-3" :class="{ 'active':  status === 'coupon' }">優惠活動</router-link>
+          <RouterLink to="/coupon" class="nav-link fw-bold px-4 px-lg-3 py-3" :class="{ 'active':  status === 'coupon' }">優惠活動</RouterLink>
         </li>
         <li class="nav-item">
-          <router-link to="/trivia" class="nav-link fw-bold px-4 px-lg-3 py-3" :class="{ 'active':  status === 'trivia' }">撲克冷知識</router-link>
+          <RouterLink to="/trivia" class="nav-link fw-bold px-4 px-lg-3 py-3" :class="{ 'active':  status === 'trivia' }">撲克冷知識</RouterLink>
         </li>
         <li class="d-block d-lg-none nav-item">
-          <router-link to="/cart" class="nav-link fw-bold px-4 px-lg-3 py-3" :class="{ 'active':  status === 'cart' }">購物車</router-link>
+          <RouterLink to="/cart" class="nav-link fw-bold px-4 px-lg-3 py-3" :class="{ 'active':  status === 'cart' }">購物車</RouterLink>
         </li>
         <li class="d-block d-lg-none nav-item">
-          <router-link to="/favorite" class="nav-link fw-bold px-4 px-lg-3 py-3" :class="{ 'active':  status === 'favorite' }">關注商品</router-link>
+          <RouterLink to="/favorite" class="nav-link fw-bold px-4 px-lg-3 py-3" :class="{ 'active':  status === 'favorite' }">關注商品</RouterLink>
         </li>
         <li class="d-block d-lg-none nav-item">
-          <router-link to="/login" class="nav-link fw-bold px-4 px-lg-3 py-3" :class="{ 'active':  status === 'login' }">後台登入</router-link>
+          <RouterLink to="/login" class="nav-link fw-bold px-4 px-lg-3 py-3" :class="{ 'active':  status === 'login' }">後台登入</RouterLink>
         </li>
       </ul>
       <ul class="d-none d-lg-flex navbar-nav ms-auto me-2">
         <li class="nav-item position-relative">
-          <router-link to="/cart" class="nav-link px-3" :class="{ 'active':  status === 'cart' }">
+          <RouterLink to="/cart" class="nav-link px-3" :class="{ 'active':  status === 'cart' }">
             <span class="material-icons">shopping_cart</span>
             <div class="bg-danger text-white rounded-circle text-center position-absolute num" v-if="cartNum !== 0">
               {{ cartNum }}
             </div>
-          </router-link>
+          </RouterLink>
         </li>
         <li class="nav-item">
-          <router-link to="/favorite" class="nav-link px-3" :class="{ 'active':  status === 'favorite' }">
+          <RouterLink to="/favorite" class="nav-link px-3" :class="{ 'active':  status === 'favorite' }">
             <span class="material-icons">favorite</span>
             <div class="bg-danger text-white rounded-circle text-center position-absolute num" v-if="favoriteNum !== 0">
               {{ favoriteNum }}
             </div>
-          </router-link>
+          </RouterLink>
         </li>
         <li class="nav-item">
-          <router-link to="/login" class="nav-link px-3" :class="{ 'active':  status === 'login' }">
+          <RouterLink to="/login" class="nav-link px-3" :class="{ 'active':  status === 'login' }">
             <span class="material-icons">manage_accounts</span>
-          </router-link>
+          </RouterLink>
         </li>
       </ul>
     </div>

@@ -2,7 +2,7 @@
   <Navbar />
   <div class="container position-relative">
     <ToastMessages />
-    <router-view />
+    <RouterView />
   </div>
 </template>
 

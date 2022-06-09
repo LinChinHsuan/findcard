@@ -9,10 +9,10 @@
       <nav class="d-none d-lg-block" aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <router-link to="/">首頁</router-link>
+            <RouterLink to="/">首頁</RouterLink>
           </li>
           <li class="breadcrumb-item">
-            <router-link to="/products">產品列表</router-link>
+            <RouterLink to="/products">產品列表</RouterLink>
           </li>
           <li class="breadcrumb-item active" aria-current="page">{{ product.title}}</li>
         </ol>

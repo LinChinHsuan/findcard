@@ -52,7 +52,7 @@
     <div class="d-flex flex-column justify-content-center align-items-center text-secondary vh-remain" v-if="!cart.carts.length">
         <span class="material-icons cart mb-3">production_quantity_limits</span>
         <p class="fs-5 fw-bold mb-5">目前購物車沒有任何商品</p>
-        <router-link to="/products" type="button" class="btn btn-primary fs-5 fw-bold text-white mt-3 px-4 py-3">瀏覽商品</router-link>
+        <RouterLink to="/products" type="button" class="btn btn-primary fs-5 fw-bold text-white mt-3 px-4 py-3">瀏覽商品</RouterLink>
     </div>
     <div class="py-sm-5 vh-remain" v-else>
       <template v-if="step === 0">
@@ -361,7 +361,7 @@
                   <p class="mb-0">感謝您的訂購</p>
                   <p class="mb-0">商品預計於三個工作天內寄送（不含週休及國定例假日）</p>
                   <p class="mb-3">再請留意簡訊通知及配送人員的電話 </p>
-                  <router-link to="/products" class="btn btn-primary fs-5 text-white fw-bold w-100 py-3">回去購物</router-link>
+                  <RouterLink to="/products" class="btn btn-primary fs-5 text-white fw-bold w-100 py-3">回去購物</RouterLink>
                 </div>
               </div>
             </template>

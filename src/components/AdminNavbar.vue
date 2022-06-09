@@ -12,19 +12,19 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav w-100">
         <li class="nav-item">
-          <router-link to="products" class="nav-link fw-bold p-3" :class="{ 'active':  status === 'adminProducts' }">產品列表</router-link>
+          <RouterLink to="products" class="nav-link fw-bold p-3" :class="{ 'active':  status === 'adminProducts' }">產品列表</RouterLink>
         </li>
         <li class="nav-item">
-          <router-link to="orders" class="nav-link fw-bold p-3" :class="{ 'active':  status === 'adminOrders' }">訂單</router-link>
+          <RouterLink to="orders" class="nav-link fw-bold p-3" :class="{ 'active':  status === 'adminOrders' }">訂單</RouterLink>
         </li>
         <li class="nav-item">
-          <router-link to="coupons" class="nav-link fw-bold p-3" :class="{ 'active':  status === 'adminCoupons' }">優惠券</router-link>
+          <RouterLink to="coupons" class="nav-link fw-bold p-3" :class="{ 'active':  status === 'adminCoupons' }">優惠券</RouterLink>
         </li>
         <li class="nav-item">
-          <router-link to="trivia" class="nav-link fw-bold p-3" :class="{ 'active':  status === 'adminTrivia' }">撲克冷知識</router-link>
+          <RouterLink to="trivia" class="nav-link fw-bold p-3" :class="{ 'active':  status === 'adminTrivia' }">撲克冷知識</RouterLink>
         </li>
         <li class="nav-item ms-lg-auto">
-          <router-link to="cart" class="nav-link fw-bold p-3" :class="{ 'active':  status === 'adminCart' }">模擬購物車</router-link>
+          <RouterLink to="cart" class="nav-link fw-bold p-3" :class="{ 'active':  status === 'adminCart' }">模擬購物車</RouterLink>
         </li>
         <li class="nav-item">
           <a class="nav-link fw-bold p-3" href="#" @click.prevent="logout">登出</a>
